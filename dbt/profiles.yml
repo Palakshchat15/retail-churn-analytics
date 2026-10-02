@@ -1,0 +1,12 @@
+retail_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | as_number }}"
+      user: "{{ env_var('POSTGRES_USER', 'retail_user') }}"
+      pass: "{{ env_var('POSTGRES_PASSWORD', 'retail_pass') }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'retail_analytics') }}"
+      schema: staging
+      threads: 4

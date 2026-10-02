@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Customer dimension."
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+
+  - name: dim_product
+    description: "Product dimension."
+    columns:
+      - name: stock_code
+        tests: [not_null, unique]
+
+  - name: fact_orders
+    description: "Order-grain fact table, star schema, references dim_customer."
+    columns:
+      - name: order_key
+        tests: [not_null, unique]
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+      - name: invoice
+        tests: [not_null]
+      - name: order_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['sale', 'credit_note']
+
+  - name: mart_customer_rfm
+    description: "RFM scores and behavioral segment per customer with at least one sale order (tie-safe percent_rank scoring)."
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+      - name: recency_days
+        tests: [not_null]
+      - name: frequency
+        tests: [not_null]
+      - name: r_score
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+      - name: f_score
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+      - name: m_score
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+      - name: customer_segment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Champions', 'Loyal', 'Potential Loyalist', 'At Risk', 'Lost', 'Others']
+
+  - name: mart_product_performance
+    description: "Product revenue/quantity performance with ABC classification."
+    columns:
+      - name: stock_code
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('dim_product')
+              field: stock_code
+      - name: abc_class
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['A', 'B', 'C']
+
+  - name: mart_monthly_sales_country
+    description: "Monthly revenue trends broken down by country, for dashboard/geo analysis."
+    columns:
+      - name: sales_month
+        tests: [not_null]
+      - name: country
+        tests: [not_null]

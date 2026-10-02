@@ -1,0 +1,108 @@
+version: "3.8"
+
+x-airflow-common: &airflow-common
+  build:
+    context: .
+    dockerfile: airflow/Dockerfile
+  environment: &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/airflow
+    AIRFLOW__CORE__FERNET_KEY: ""
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth"
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+    POSTGRES_USER: ${POSTGRES_USER}
+    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    POSTGRES_DB: ${POSTGRES_DB}
+    POSTGRES_HOST: postgres
+    POSTGRES_PORT: 5432
+    GROQ_API_KEY: ${GROQ_API_KEY}
+    OPENAI_API_KEY: ${OPENAI_API_KEY}
+    OLLAMA_MODEL: ${OLLAMA_MODEL}
+    OLLAMA_BASE_URL: ${OLLAMA_BASE_URL}
+    # Host path of data/processed, recorded in the Tableau workbook as the source for "Refresh Extract"
+    TABLEAU_DATA_DIR: ${HOST_PROJECT_DIR}/data/processed
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
+    - ./data:/opt/airflow/data
+    - ./dbt:/opt/airflow/dbt
+    - ./src:/opt/airflow/src
+    - ./outputs:/opt/airflow/outputs
+    - ./tableau:/opt/airflow/tableau
+    - ./great_expectations:/opt/airflow/great_expectations
+  user: "0:0"
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5434:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./postgres_init:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    command: >
+      postgres -c max_connections=200
+
+  postgres-init-airflow-db:
+    image: postgres:15
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    entrypoint: >
+      bash -c "psql -h postgres -U ${POSTGRES_USER} -d ${POSTGRES_DB} -tc \"SELECT 1 FROM pg_database WHERE datname = 'airflow'\" | grep -q 1 ||
+      psql -h postgres -U ${POSTGRES_USER} -d ${POSTGRES_DB} -c \"CREATE DATABASE airflow\""
+
+  airflow-init:
+    <<: *airflow-common
+    depends_on:
+      postgres-init-airflow-db:
+        condition: service_completed_successfully
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        airflow db migrate
+        airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com || true
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8083:8080"
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:8080/health || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+
+volumes:
+  pg_data:

@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: retail_transactions
+        description: "Raw UCI Online Retail II transaction lines, chunk-loaded from CSV."
+        columns:
+          - name: invoice
+            tests:
+              - not_null
+          - name: stock_code
+            tests:
+              - not_null
+          - name: invoice_date
+            tests:
+              - not_null

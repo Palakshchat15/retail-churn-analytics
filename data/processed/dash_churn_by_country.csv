@@ -1,0 +1,8 @@
+country,customers,churned,churn_rate
+United Kingdom,2397,707,0.295
+Germany,57,16,0.2807
+France,54,13,0.2407
+Spain,20,3,0.15
+Belgium,16,6,0.375
+Switzerland,12,4,0.3333
+Portugal,10,4,0.4

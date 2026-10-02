@@ -1,0 +1,15 @@
+spend_band,frequency_band,customers,churned,churn_rate
+Under £250,1 order,203,139,0.6847
+Under £250,2-3 orders,49,24,0.4898
+£250-1K,1 order,207,101,0.4879
+£250-1K,2-3 orders,414,190,0.4589
+£250-1K,4-6 orders,177,66,0.3729
+£250-1K,7-12 orders,23,5,0.2174
+£1K-5K,1 order,19,13,0.6842
+£1K-5K,2-3 orders,143,55,0.3846
+£1K-5K,4-6 orders,434,102,0.235
+£1K-5K,7-12 orders,466,60,0.1288
+£1K-5K,13+ orders,120,8,0.0667
+£5K+,4-6 orders,24,3,0.125
+£5K+,7-12 orders,81,5,0.0617
+£5K+,13+ orders,279,9,0.0323

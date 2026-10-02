@@ -1,0 +1,663 @@
+customer_id,churn_probability,predicted_churn,actual_churned_label,top_shap_reasons,actual_segment
+16080,0.94781554,1,0,total_items_purchased(+0.758); monetary(+0.510); return_rate(+0.463),Others
+14473,0.94190925,1,0,total_items_purchased(+0.999); monetary(+0.735); frequency(+0.723),Others
+16500,0.933224,1,0,recency_days(+0.915); total_items_purchased(+0.889); avg_distinct_products(+0.241),Loyal
+12401,0.92303026,1,1,total_items_purchased(+0.962); frequency(+0.673); monetary(+0.600),Lost
+14386,0.9221341,1,1,total_items_purchased(+0.822); frequency(+0.689); monetary(+0.640),Lost
+16078,0.9159836,1,1,frequency(+0.745); monetary(+0.562); total_items_purchased(+0.413),Lost
+16778,0.9100364,1,0,total_items_purchased(+0.771); frequency(+0.720); monetary(+0.697),Others
+12717,0.90969807,1,0,frequency(+0.686); customer_tenure_days(+0.558); avg_order_value(+0.430),Others
+18227,0.9035714,1,1,total_items_purchased(+0.739); monetary(+0.641); frequency(+0.634),Lost
+16885,0.9027612,1,0,recency_days(+1.073); total_items_purchased(+0.652); frequency(+0.463),Potential Loyalist
+16216,0.8911403,1,1,avg_order_value(+1.169); total_items_purchased(+0.674); frequency(+0.594),At Risk
+12736,0.8879058,1,1,recency_days(+0.817); frequency(+0.595); total_items_purchased(+0.484),Lost
+15100,0.88542634,1,1,recency_days(+0.892); total_items_purchased(+0.684); frequency(-0.637),Loyal
+13328,0.884492,1,1,avg_order_value(+0.579); recency_days(+0.540); frequency(+0.526),At Risk
+17250,0.88375574,1,0,frequency(+0.703); monetary(+0.602); total_items_purchased(+0.566),Potential Loyalist
+13588,0.87486917,1,0,monetary(+0.781); frequency(+0.698); total_items_purchased(+0.635),Champions
+14414,0.8726647,1,0,recency_days(+1.045); total_items_purchased(+0.499); frequency(+0.415),Loyal
+14457,0.8716578,1,1,frequency(+0.656); monetary(+0.651); total_items_purchased(+0.330),Lost
+13482,0.87033933,1,1,frequency(+0.766); customer_tenure_days(+0.518); monetary(+0.461),Lost
+18146,0.86966467,1,0,frequency(+0.662); monetary(+0.630); total_items_purchased(+0.593),Others
+17795,0.8688016,1,0,monetary(+0.731); frequency(+0.642); total_items_purchased(+0.404),Others
+13551,0.8664462,1,1,frequency(+0.661); total_items_purchased(+0.626); avg_order_value(-0.268),Lost
+17862,0.8649167,1,1,recency_days(+0.883); total_items_purchased(+0.526); avg_distinct_products(+0.348),At Risk
+13716,0.86458147,1,1,monetary(+0.647); frequency(+0.635); recency_days(+0.387),Lost
+12604,0.8627909,1,0,frequency(+0.689); monetary(+0.661); recency_days(+0.346),Others
+14338,0.86239165,1,0,frequency(+0.649); customer_tenure_days(+0.633); total_items_purchased(+0.315),Others
+12929,0.8586248,1,1,frequency(+0.649); total_items_purchased(+0.634); monetary(+0.604),Lost
+14162,0.8573774,1,0,frequency(+0.664); monetary(+0.616); total_items_purchased(+0.310),Others
+15408,0.8559914,1,1,frequency(+0.620); recency_days(+0.367); total_items_purchased(+0.312),Lost
+14633,0.85581565,1,1,frequency(+0.611); monetary(+0.477); recency_days(+0.410),Lost
+17786,0.85476714,1,0,frequency(+0.613); monetary(+0.550); total_items_purchased(+0.458),Others
+15083,0.8543573,1,1,frequency(+0.697); monetary(+0.645); total_items_purchased(+0.551),Lost
+15460,0.8536863,1,1,recency_days(+0.885); frequency(+0.633); total_items_purchased(+0.465),Lost
+16913,0.85296404,1,1,total_items_purchased(+0.574); monetary(+0.348); frequency(+0.327),At Risk
+16162,0.8522322,1,1,total_items_purchased(+1.011); monetary(+0.750); frequency(+0.690),Lost
+14411,0.8496336,1,1,avg_order_value(+0.737); frequency(+0.570); recency_days(+0.505),At Risk
+17384,0.8482114,1,0,monetary(+0.585); frequency(+0.538); total_items_purchased(+0.408),Potential Loyalist
+15689,0.8437994,1,0,frequency(+0.608); monetary(+0.459); total_items_purchased(+0.442),Others
+14059,0.8369593,1,1,frequency(+0.689); monetary(+0.663); recency_days(+0.386),Lost
+15181,0.8319112,1,0,return_rate(+0.601); frequency(+0.396); credit_notes_per_order(+0.366),Loyal
+16319,0.8314749,1,1,total_items_purchased(+0.741); frequency(+0.615); monetary(+0.445),Lost
+14297,0.8313692,1,0,frequency(+0.619); total_items_purchased(+0.536); recency_days(+0.386),Potential Loyalist
+14520,0.83102924,1,0,frequency(+0.703); monetary(+0.609); total_items_purchased(+0.211),Potential Loyalist
+17830,0.83058035,1,0,total_items_purchased(+0.745); frequency(+0.542); recency_days(+0.267),Potential Loyalist
+14536,0.82914776,1,1,frequency(+0.669); monetary(+0.619); total_items_purchased(+0.505),Lost
+13656,0.82854164,1,0,recency_days(+0.911); total_items_purchased(+0.427); customer_tenure_days(+0.274),Others
+13003,0.8260239,1,0,monetary(+0.724); frequency(+0.642); total_items_purchased(+0.570),Others
+12561,0.824558,1,1,recency_days(+0.590); frequency(+0.560); total_items_purchased(+0.485),Lost
+15053,0.8169535,1,0,total_items_purchased(+0.639); frequency(+0.536); recency_days(+0.416),Potential Loyalist
+13158,0.8133852,1,0,recency_days(+0.651); frequency(+0.452); customer_tenure_days(-0.372),Loyal
+14497,0.8103293,1,1,frequency(+0.558); customer_tenure_days(+0.462); recency_days(+0.329),At Risk
+16185,0.8099607,1,0,frequency(+0.696); customer_tenure_days(+0.429); total_items_purchased(+0.397),Potential Loyalist
+16659,0.8096629,1,1,monetary(+0.714); total_items_purchased(+0.665); frequency(+0.641),Lost
+17893,0.8072336,1,1,monetary(+0.899); frequency(+0.606); total_items_purchased(+0.319),Lost
+18189,0.80705726,1,0,frequency(+0.601); customer_tenure_days(+0.508); avg_order_value(+0.363),Others
+13261,0.8063598,1,1,frequency(+0.514); recency_days(+0.397); total_items_purchased(+0.383),At Risk
+15454,0.8043945,1,1,frequency(+0.597); customer_tenure_days(+0.227); monetary(+0.217),Lost
+16030,0.8009462,1,1,frequency(+0.557); recency_days(+0.485); total_items_purchased(+0.430),Lost
+12373,0.79955006,1,1,total_items_purchased(+0.467); recency_days(+0.457); frequency(+0.317),At Risk
+16446,0.79564387,1,1,recency_days(-0.903); total_items_purchased(+0.670); monetary(+0.643),Potential Loyalist
+15266,0.7938671,1,1,total_items_purchased(+0.790); recency_days(+0.721); customer_tenure_days(+0.219),Loyal
+12489,0.7938345,1,1,recency_days(+0.955); frequency(+0.551); total_items_purchased(+0.414),Lost
+16112,0.79262847,1,0,recency_days(+0.643); avg_order_value(-0.449); frequency(+0.444),Others
+16357,0.78903055,1,0,monetary(+0.628); frequency(+0.546); recency_days(-0.481),Potential Loyalist
+12456,0.7886162,1,0,avg_order_value(+1.129); frequency(+0.593); total_items_purchased(+0.427),Potential Loyalist
+14973,0.78698224,1,0,frequency(+0.614); total_items_purchased(+0.570); avg_distinct_products(+0.240),Others
+13565,0.7861364,1,0,recency_days(+0.734); frequency(+0.443); customer_tenure_days(-0.389),Potential Loyalist
+14348,0.7850116,1,1,frequency(+0.605); monetary(+0.400); total_items_purchased(+0.397),Lost
+16757,0.7788669,1,1,frequency(+0.450); recency_days(+0.444); total_items_purchased(+0.444),Lost
+13614,0.7769954,1,0,recency_days(+0.939); total_items_purchased(+0.395); frequency(+0.227),Champions
+17946,0.77632785,1,1,total_items_purchased(+0.601); frequency(+0.525); monetary(+0.448),Lost
+16152,0.77587986,1,1,frequency(+0.672); avg_order_value(+0.380); total_items_purchased(+0.254),At Risk
+14012,0.7753235,1,1,frequency(+0.585); total_items_purchased(+0.384); recency_days(+0.357),Lost
+13494,0.7752354,1,1,recency_days(+0.589); frequency(+0.550); total_items_purchased(+0.429),Lost
+12831,0.77466714,1,1,monetary(+0.350); total_items_purchased(+0.297); frequency(+0.263),At Risk
+17537,0.7744934,1,0,recency_days(+0.814); avg_distinct_products(-0.609); frequency(+0.537),Potential Loyalist
+17880,0.7733496,1,1,total_items_purchased(+0.464); recency_days(+0.356); frequency(+0.278),At Risk
+14784,0.77286446,1,0,recency_days(+0.581); frequency(+0.440); total_items_purchased(+0.421),Potential Loyalist
+17551,0.769824,1,1,frequency(+0.624); total_items_purchased(+0.598); recency_days(+0.421),Lost
+13973,0.7687819,1,1,frequency(+0.599); recency_days(+0.302); total_items_purchased(+0.265),Lost
+17187,0.76787966,1,1,frequency(+0.631); monetary(+0.305); customer_tenure_days(+0.178),Lost
+12614,0.7640753,1,1,frequency(+0.575); total_items_purchased(+0.465); recency_days(+0.378),Lost
+17678,0.76031804,1,1,frequency(+0.647); total_items_purchased(+0.388); customer_tenure_days(+0.328),Lost
+12506,0.759154,1,1,frequency(+0.622); monetary(+0.615); total_items_purchased(+0.579),Lost
+14890,0.7577317,1,1,total_items_purchased(+0.414); customer_tenure_days(+0.360); frequency(+0.335),At Risk
+14645,0.75466025,1,0,frequency(+0.587); return_rate(-0.468); customer_tenure_days(+0.458),Others
+16927,0.75176823,1,0,frequency(+0.495); total_items_purchased(+0.340); customer_tenure_days(-0.335),Others
+14342,0.75173825,1,0,recency_days(-0.578); monetary(+0.415); avg_distinct_products(+0.389),Loyal
+12515,0.74826723,1,1,recency_days(+0.630); frequency(+0.534); avg_order_value(-0.508),Lost
+14636,0.7477879,1,0,frequency(+0.593); recency_days(+0.402); total_items_purchased(+0.265),Potential Loyalist
+12785,0.746338,1,1,total_items_purchased(+0.501); recency_days(+0.301); avg_order_value(-0.289),At Risk
+13962,0.74394584,1,0,frequency(+0.503); monetary(+0.345); avg_distinct_products(+0.170),Potential Loyalist
+12942,0.7431248,1,0,monetary(+0.604); frequency(+0.520); customer_tenure_days(+0.205),Others
+13216,0.74298954,1,1,frequency(+0.591); avg_order_value(-0.354); total_items_purchased(+0.322),Lost
+12781,0.7416717,1,0,frequency(+0.495); customer_tenure_days(-0.323); recency_days(+0.315),Others
+12350,0.7406511,1,1,frequency(+0.539); recency_days(+0.521); total_items_purchased(+0.428),Lost
+14600,0.7401192,1,1,recency_days(+0.514); frequency(+0.489); total_items_purchased(+0.437),At Risk
+13899,0.7377526,1,0,frequency(+0.589); recency_days(+0.395); customer_tenure_days(-0.275),Potential Loyalist
+13294,0.7368778,1,1,customer_tenure_days(+0.836); avg_distinct_products(+0.380); total_items_purchased(-0.376),At Risk
+12787,0.7346454,1,0,frequency(+0.531); total_items_purchased(+0.295); customer_tenure_days(+0.157),Potential Loyalist
+12457,0.73174095,1,0,return_rate(+0.345); avg_distinct_products(+0.324); total_items_purchased(+0.323),Loyal
+14759,0.7315575,1,0,frequency(+0.587); avg_order_value(+0.354); customer_tenure_days(-0.297),Potential Loyalist
+17094,0.7292337,1,1,recency_days(+0.517); total_items_purchased(+0.511); frequency(+0.464),Lost
+15944,0.72847337,1,1,customer_tenure_days(+0.587); avg_order_value(+0.520); monetary(-0.277),At Risk
+14477,0.7273345,1,0,customer_tenure_days(+0.489); total_items_purchased(+0.399); avg_distinct_products(+0.250),Champions
+16159,0.72731555,1,1,customer_tenure_days(+0.628); total_items_purchased(+0.424); avg_order_value(-0.220),At Risk
+17277,0.7255808,1,1,avg_order_value(+0.505); frequency(+0.505); customer_tenure_days(-0.485),At Risk
+17223,0.7241579,1,1,recency_days(+0.605); frequency(+0.265); total_items_purchased(+0.263),At Risk
+15806,0.72272027,1,0,frequency(+0.527); total_items_purchased(+0.352); customer_tenure_days(-0.318),Potential Loyalist
+15139,0.7203804,1,1,monetary(+0.587); frequency(+0.502); customer_tenure_days(-0.411),Lost
+14128,0.7187124,1,0,frequency(+0.526); total_items_purchased(+0.424); avg_distinct_products(+0.161),Others
+17392,0.71635455,1,1,recency_days(+0.503); customer_tenure_days(-0.482); total_items_purchased(+0.410),At Risk
+15835,0.71616226,1,0,total_items_purchased(+0.627); frequency(+0.449); customer_tenure_days(-0.389),Potential Loyalist
+16469,0.71495366,1,0,customer_tenure_days(+0.287); frequency(+0.251); monetary(+0.243),Loyal
+17455,0.71484673,1,1,recency_days(-1.036); monetary(+0.812); total_items_purchased(+0.697),Lost
+12818,0.71268904,1,1,frequency(+0.634); avg_order_value(+0.474); total_items_purchased(-0.281),At Risk
+16399,0.71181226,1,0,frequency(+0.553); monetary(+0.501); customer_tenure_days(-0.385),Potential Loyalist
+12619,0.7095046,1,0,total_items_purchased(+0.507); frequency(+0.323); customer_tenure_days(+0.266),Champions
+13956,0.7085197,1,0,frequency(+0.486); monetary(+0.395); customer_tenure_days(-0.315),Loyal
+15213,0.7048903,1,1,recency_days(+0.455); frequency(+0.428); total_items_purchased(+0.365),Lost
+14570,0.7038598,1,1,frequency(+0.297); total_items_purchased(+0.243); avg_distinct_products(+0.180),At Risk
+14238,0.70338166,1,1,recency_days(+0.417); monetary(+0.300); frequency(+0.223),At Risk
+13462,0.7014367,1,1,customer_tenure_days(+0.697); total_items_purchased(+0.320); frequency(-0.144),Loyal
+13792,0.698149,1,0,frequency(+0.541); customer_tenure_days(-0.505); total_items_purchased(+0.299),Others
+18171,0.6972201,1,0,customer_tenure_days(+0.622); total_items_purchased(+0.510); frequency(-0.299),Loyal
+12462,0.69586474,1,0,avg_order_value(+1.013); recency_days(+0.649); frequency(+0.578),Potential Loyalist
+15442,0.6952096,1,1,frequency(+0.613); avg_distinct_products(-0.412); avg_order_value(+0.377),At Risk
+12993,0.69372624,1,0,recency_days(-0.648); customer_tenure_days(+0.605); total_items_purchased(+0.492),Champions
+13002,0.6921728,1,1,customer_tenure_days(-0.412); recency_days(+0.392); monetary(+0.369),At Risk
+17571,0.69178784,1,0,total_items_purchased(+0.369); frequency(+0.323); customer_tenure_days(+0.274),Champions
+16063,0.68903923,1,1,total_items_purchased(+0.576); frequency(+0.543); customer_tenure_days(-0.382),Lost
+14470,0.6872819,1,0,total_items_purchased(+0.587); customer_tenure_days(-0.569); frequency(+0.510),Potential Loyalist
+17749,0.6853727,1,0,frequency(+0.613); total_items_purchased(+0.318); avg_order_value(-0.261),Others
+13959,0.684089,1,0,total_items_purchased(+0.470); avg_distinct_products(+0.249); customer_tenure_days(+0.168),Loyal
+16624,0.6801201,1,0,frequency(+0.515); customer_tenure_days(-0.457); total_items_purchased(+0.275),Others
+16270,0.67793655,1,1,frequency(+0.558); recency_days(+0.547); avg_order_value(+0.445),At Risk
+15530,0.674888,1,0,frequency(+0.604); avg_distinct_products(-0.441); customer_tenure_days(+0.260),Champions
+14741,0.6734752,1,0,recency_days(+0.496); total_items_purchased(+0.427); frequency(+0.300),Champions
+17166,0.6685875,1,0,recency_days(-0.937); monetary(+0.767); frequency(+0.572),Potential Loyalist
+14619,0.6658708,1,1,frequency(+0.588); total_items_purchased(+0.355); return_rate(-0.288),At Risk
+15152,0.6606014,1,0,frequency(+0.498); recency_days(-0.412); customer_tenure_days(+0.332),Champions
+14603,0.6584529,1,1,frequency(+0.602); avg_distinct_products(-0.282); recency_days(+0.241),At Risk
+16552,0.6561455,1,1,customer_tenure_days(-0.527); frequency(+0.499); total_items_purchased(+0.474),Lost
+16947,0.65479165,1,1,total_items_purchased(+0.381); avg_distinct_products(+0.309); frequency(-0.239),Loyal
+15865,0.65455663,1,0,customer_tenure_days(+0.512); total_items_purchased(-0.379); frequency(+0.366),Champions
+13253,0.6523415,1,0,avg_order_value(+0.970); total_items_purchased(-0.861); monetary(-0.526),Others
+12413,0.6485558,1,0,total_items_purchased(+0.640); return_rate(-0.356); frequency(+0.306),Others
+15333,0.6482951,1,1,avg_order_value(+0.987); recency_days(-0.756); frequency(+0.510),At Risk
+17691,0.6481184,1,1,recency_days(+0.849); customer_tenure_days(-0.235); return_rate(-0.191),At Risk
+16769,0.64727086,1,1,customer_tenure_days(+0.353); avg_distinct_products(+0.198); total_items_purchased(+0.195),At Risk
+13166,0.6467866,1,1,customer_tenure_days(-0.600); frequency(+0.525); avg_order_value(+0.394),At Risk
+12994,0.6466512,1,0,return_rate(-0.666); frequency(+0.528); total_items_purchased(+0.457),Potential Loyalist
+14262,0.6412724,1,0,frequency(+0.560); total_items_purchased(+0.354); customer_tenure_days(-0.339),Champions
+16801,0.6400337,1,0,customer_tenure_days(-0.531); return_rate(+0.425); total_items_purchased(+0.370),Others
+14068,0.63846123,1,1,recency_days(+0.673); total_items_purchased(+0.363); return_rate(-0.301),At Risk
+14193,0.6376704,1,0,frequency(+0.520); customer_tenure_days(-0.454); total_items_purchased(+0.403),Others
+16377,0.6370441,1,1,total_items_purchased(-0.892); frequency(+0.723); avg_order_value(+0.363),At Risk
+16838,0.635224,1,1,customer_tenure_days(+0.658); total_items_purchased(+0.404); avg_order_value(-0.302),At Risk
+13684,0.6308854,1,1,total_items_purchased(+0.822); return_rate(-0.414); avg_distinct_products(-0.234),At Risk
+17580,0.63020945,1,1,total_items_purchased(+0.538); customer_tenure_days(+0.232); avg_order_value(-0.162),At Risk
+13121,0.628869,1,1,total_items_purchased(+0.652); avg_distinct_products(-0.589); frequency(+0.536),Lost
+14077,0.6259156,1,0,monetary(+0.330); avg_order_value(-0.296); customer_tenure_days(+0.271),Loyal
+14924,0.6243011,1,1,customer_tenure_days(+0.358); frequency(+0.330); avg_order_value(-0.253),At Risk
+15223,0.6211899,1,1,return_rate(+0.670); customer_tenure_days(-0.169); avg_order_value(-0.093),Loyal
+17109,0.61872745,1,0,total_items_purchased(+0.528); customer_tenure_days(+0.357); monetary(-0.207),Champions
+16647,0.6180546,1,0,recency_days(-0.737); monetary(+0.440); customer_tenure_days(+0.369),Others
+13743,0.6164673,1,0,frequency(+0.474); monetary(+0.423); customer_tenure_days(-0.421),Champions
+15549,0.6139771,1,0,return_rate(-0.404); recency_days(+0.374); total_items_purchased(+0.358),Loyal
+17142,0.6137578,1,1,customer_tenure_days(+0.393); avg_distinct_products(+0.198); frequency(-0.183),At Risk
+17051,0.6099266,1,1,customer_tenure_days(+0.528); total_items_purchased(+0.352); avg_distinct_products(-0.342),At Risk
+15376,0.607286,1,0,frequency(+0.553); customer_tenure_days(-0.423); total_items_purchased(+0.301),Potential Loyalist
+14805,0.60590357,1,0,recency_days(+0.356); avg_distinct_products(+0.305); avg_order_value(-0.217),Loyal
+13606,0.6040083,1,0,total_items_purchased(+0.572); customer_tenure_days(-0.468); frequency(+0.435),Potential Loyalist
+17082,0.59897953,1,0,total_items_purchased(-0.988); recency_days(+0.667); avg_order_value(+0.389),Champions
+17501,0.59838563,1,1,frequency(+0.502); customer_tenure_days(-0.335); monetary(+0.226),Lost
+17226,0.5978797,1,1,total_items_purchased(-0.409); frequency(+0.332); customer_tenure_days(+0.326),At Risk
+16643,0.59743845,1,1,frequency(+0.454); total_items_purchased(+0.441); avg_distinct_products(-0.266),At Risk
+14647,0.59641075,1,1,recency_days(-0.971); frequency(+0.696); customer_tenure_days(+0.440),Lost
+16997,0.5946254,1,1,total_items_purchased(+0.304); frequency(+0.284); customer_tenure_days(-0.208),At Risk
+15304,0.58966035,1,0,total_items_purchased(+0.711); monetary(+0.401); return_rate(-0.318),Loyal
+16419,0.5887801,1,0,total_items_purchased(+0.461); frequency(-0.212); avg_order_value(-0.140),Loyal
+13753,0.58865714,1,1,total_items_purchased(-0.841); customer_tenure_days(+0.643); avg_order_value(+0.488),At Risk
+15717,0.5855473,1,1,total_items_purchased(+0.537); avg_order_value(-0.367); customer_tenure_days(+0.192),Loyal
+15691,0.581958,1,1,return_rate(-0.377); monetary(+0.369); customer_tenure_days(+0.331),At Risk
+17373,0.5818184,1,0,recency_days(+0.367); avg_order_value(-0.191); total_items_purchased(+0.180),Loyal
+13863,0.5791624,1,1,total_items_purchased(+0.524); customer_tenure_days(+0.217); avg_order_value(-0.179),At Risk
+15464,0.57852,1,1,avg_distinct_products(-1.514); recency_days(+1.045); frequency(+0.474),At Risk
+18232,0.5763143,1,0,monetary(+0.561); frequency(+0.509); customer_tenure_days(-0.477),Others
+13835,0.5760369,1,0,total_items_purchased(+0.649); recency_days(-0.373); return_rate(-0.300),Loyal
+12394,0.57242453,1,0,frequency(+0.454); monetary(+0.422); recency_days(-0.418),Others
+12956,0.5715349,1,1,recency_days(+0.275); total_items_purchased(+0.205); frequency(-0.198),At Risk
+13512,0.5692551,1,1,customer_tenure_days(+0.245); total_items_purchased(+0.235); avg_order_value(-0.150),At Risk
+12948,0.5688265,1,0,total_items_purchased(+0.538); recency_days(-0.473); avg_distinct_products(+0.220),Champions
+17883,0.5685333,1,0,avg_order_value(-0.237); monetary(+0.198); frequency(-0.192),Loyal
+18043,0.56247884,1,0,recency_days(-0.788); total_items_purchased(+0.652); avg_distinct_products(-0.512),Potential Loyalist
+14583,0.55984694,1,0,customer_tenure_days(+0.598); total_items_purchased(+0.416); avg_distinct_products(-0.410),Champions
+16023,0.55980295,1,0,customer_tenure_days(-0.522); total_items_purchased(+0.482); frequency(+0.465),Potential Loyalist
+15671,0.5588368,1,0,total_items_purchased(+0.440); customer_tenure_days(-0.295); frequency(+0.260),Champions
+17734,0.5585596,1,0,total_items_purchased(+0.303); customer_tenure_days(+0.300); avg_order_value(-0.199),Champions
+13890,0.55429673,1,0,recency_days(+1.012); return_rate(-0.394); total_items_purchased(+0.360),Champions
+14353,0.55382425,1,1,monetary(+0.574); recency_days(-0.494); frequency(+0.244),At Risk
+16471,0.5535941,1,1,total_items_purchased(+0.379); frequency(-0.245); customer_tenure_days(+0.195),At Risk
+16457,0.55171436,1,1,frequency(+0.554); recency_days(-0.295); monetary(+0.266),Lost
+18072,0.5515591,1,1,frequency(+0.487); customer_tenure_days(-0.426); recency_days(-0.372),Others
+15906,0.5496546,1,0,return_rate(-0.301); total_items_purchased(+0.264); frequency(-0.235),Champions
+15894,0.5495103,1,1,customer_tenure_days(-0.609); frequency(+0.504); total_items_purchased(+0.304),Lost
+17601,0.5480623,1,1,customer_tenure_days(-0.679); frequency(+0.544); total_items_purchased(+0.363),Lost
+13060,0.54602355,1,1,frequency(+0.572); customer_tenure_days(-0.303); avg_order_value(-0.282),Lost
+16109,0.5451273,1,1,customer_tenure_days(+0.759); total_items_purchased(-0.694); frequency(+0.320),At Risk
+16367,0.5446636,1,0,avg_distinct_products(-0.966); recency_days(+0.933); total_items_purchased(+0.445),Potential Loyalist
+16763,0.543444,1,1,customer_tenure_days(-0.655); frequency(+0.555); total_items_purchased(+0.418),At Risk
+17525,0.542998,1,1,avg_order_value(-0.504); recency_days(+0.460); total_items_purchased(+0.335),At Risk
+15197,0.54176515,1,0,customer_tenure_days(+0.736); return_rate(-0.335); recency_days(-0.257),Champions
+16660,0.53844243,1,0,customer_tenure_days(+0.581); recency_days(-0.497); total_items_purchased(+0.392),Champions
+12535,0.5383361,1,0,monetary(+0.538); recency_days(-0.503); frequency(+0.499),Others
+18272,0.5381832,1,0,total_items_purchased(-0.724); avg_order_value(+0.345); customer_tenure_days(+0.319),Champions
+17516,0.53783184,1,0,total_items_purchased(+0.236); customer_tenure_days(+0.164); avg_order_value(-0.153),Loyal
+15292,0.5366367,1,1,recency_days(-1.125); monetary(+0.619); frequency(+0.619),Lost
+17917,0.5358108,1,0,customer_tenure_days(-0.498); frequency(+0.487); avg_order_value(-0.446),Potential Loyalist
+15019,0.5348192,1,1,avg_distinct_products(-1.342); frequency(+0.598); total_items_purchased(+0.525),Lost
+13809,0.5342404,1,1,recency_days(+0.328); total_items_purchased(+0.327); customer_tenure_days(-0.285),At Risk
+17884,0.5340304,1,0,recency_days(+1.216); frequency(-1.065); total_items_purchased(-0.441),Champions
+14561,0.5339637,1,0,recency_days(-0.679); frequency(+0.518); monetary(+0.400),Others
+12815,0.5335264,1,0,recency_days(-0.629); total_items_purchased(+0.535); customer_tenure_days(-0.472),Others
+15212,0.5308659,1,1,frequency(+0.516); monetary(+0.401); customer_tenure_days(-0.391),Lost
+15101,0.5294073,1,0,return_rate(-0.428); total_items_purchased(+0.360); avg_distinct_products(+0.293),Champions
+13888,0.52877474,1,0,customer_tenure_days(+0.321); frequency(-0.320); monetary(-0.218),Loyal
+14723,0.52581316,1,0,recency_days(+0.836); frequency(-0.688); avg_distinct_products(-0.103),Champions
+17176,0.5245768,1,1,recency_days(-0.906); customer_tenure_days(+0.660); total_items_purchased(+0.515),At Risk
+17763,0.5240877,1,1,avg_order_value(-0.799); total_items_purchased(+0.459); return_rate(+0.360),At Risk
+17115,0.5180133,1,0,total_items_purchased(+0.380); monetary(-0.356); return_rate(-0.224),Champions
+16654,0.5167302,1,0,total_items_purchased(+0.571); frequency(-0.471); customer_tenure_days(+0.248),Loyal
+17869,0.5139904,1,0,recency_days(-0.442); total_items_purchased(+0.373); customer_tenure_days(+0.237),Loyal
+17898,0.5135807,1,0,recency_days(-0.679); customer_tenure_days(+0.418); avg_order_value(-0.386),Others
+14481,0.51272017,1,0,total_items_purchased(-0.980); avg_order_value(+0.597); customer_tenure_days(+0.297),Loyal
+16320,0.509377,1,0,avg_order_value(+0.937); customer_tenure_days(+0.721); total_items_purchased(-0.652),Loyal
+17499,0.50738823,1,1,total_items_purchased(-1.032); frequency(+0.575); avg_distinct_products(+0.378),At Risk
+13539,0.5058787,1,0,total_items_purchased(+0.415); return_rate(-0.394); frequency(-0.322),Loyal
+15393,0.5029375,1,0,customer_tenure_days(+0.234); frequency(-0.223); avg_order_value(-0.209),Loyal
+16938,0.5008293,1,0,avg_order_value(+1.488); total_items_purchased(-0.915); recency_days(+0.875),Champions
+14501,0.49898776,0,1,recency_days(-0.796); customer_tenure_days(-0.607); frequency(+0.491),Others
+12695,0.4989588,0,0,recency_days(-0.593); customer_tenure_days(+0.475); total_items_purchased(+0.465),Champions
+18183,0.49848562,0,1,frequency(+0.438); customer_tenure_days(-0.406); return_rate(-0.352),At Risk
+15289,0.4974613,0,0,total_items_purchased(-0.695); frequency(+0.396); customer_tenure_days(+0.254),Champions
+17854,0.49565595,0,1,total_items_purchased(+0.580); customer_tenure_days(-0.446); avg_order_value(-0.196),Loyal
+14859,0.49441472,0,0,recency_days(-0.933); frequency(+0.591); customer_tenure_days(+0.425),Champions
+12407,0.49358475,0,0,frequency(+0.479); customer_tenure_days(-0.329); avg_distinct_products(-0.278),Champions
+17027,0.49015713,0,0,frequency(-0.423); customer_tenure_days(+0.416); return_rate(-0.172),Loyal
+16099,0.48957264,0,0,customer_tenure_days(+0.217); frequency(-0.198); avg_order_value(-0.127),Champions
+15067,0.48796487,0,0,total_items_purchased(-1.208); avg_order_value(+1.192); avg_distinct_products(-0.564),Loyal
+13804,0.48741528,0,0,customer_tenure_days(-0.582); frequency(+0.275); total_items_purchased(-0.192),Champions
+17018,0.48725063,0,0,recency_days(+0.504); avg_order_value(-0.269); total_items_purchased(+0.226),Champions
+16735,0.48675415,0,0,credit_notes_per_order(+0.625); total_items_purchased(-0.623); monetary(-0.481),Loyal
+17361,0.4858058,0,0,customer_tenure_days(+0.195); frequency(-0.147); recency_days(-0.110),Loyal
+16730,0.48065442,0,0,customer_tenure_days(-0.572); frequency(+0.494); return_rate(+0.365),Potential Loyalist
+14127,0.47927508,0,0,monetary(-0.200); avg_order_value(-0.146); avg_distinct_products(+0.144),Loyal
+15092,0.47517842,0,1,recency_days(-0.563); total_items_purchased(+0.500); frequency(+0.273),At Risk
+13887,0.47465622,0,1,recency_days(-0.959); monetary(+0.579); frequency(+0.552),Lost
+16777,0.47292817,0,0,total_items_purchased(+0.384); return_rate(-0.200); customer_tenure_days(+0.199),Loyal
+17555,0.4727764,0,0,recency_days(+0.784); avg_distinct_products(-0.780); total_items_purchased(+0.497),Loyal
+14379,0.47020474,0,0,total_items_purchased(+0.460); customer_tenure_days(-0.437); frequency(+0.264),Potential Loyalist
+14475,0.4688859,0,0,recency_days(-0.453); credit_notes_per_order(+0.244); frequency(+0.240),Others
+15038,0.4667997,0,0,frequency(-0.456); total_items_purchased(+0.232); customer_tenure_days(+0.157),Loyal
+13821,0.4619744,0,0,customer_tenure_days(+0.388); avg_distinct_products(-0.273); total_items_purchased(+0.272),Loyal
+17263,0.45917547,0,1,recency_days(-0.915); monetary(+0.692); frequency(+0.529),Lost
+14693,0.45682102,0,1,frequency(-0.561); customer_tenure_days(+0.193); total_items_purchased(+0.140),Loyal
+15489,0.45238054,0,0,customer_tenure_days(+0.824); recency_days(-0.480); avg_distinct_products(-0.236),Champions
+15433,0.45128372,0,1,recency_days(-0.656); customer_tenure_days(-0.498); frequency(+0.437),Lost
+17886,0.44795936,0,0,recency_days(-0.654); total_items_purchased(+0.392); customer_tenure_days(+0.236),Champions
+15632,0.44531292,0,0,customer_tenure_days(-0.539); frequency(+0.279); avg_distinct_products(+0.141),Champions
+13285,0.4435315,0,0,total_items_purchased(-0.819); avg_order_value(+0.392); customer_tenure_days(+0.363),Champions
+17320,0.44257522,0,0,customer_tenure_days(+0.638); total_items_purchased(-0.622); avg_distinct_products(+0.298),Loyal
+13223,0.44216642,0,1,total_items_purchased(+0.554); customer_tenure_days(+0.463); recency_days(-0.446),Loyal
+15665,0.44094178,0,0,avg_order_value(+1.246); avg_distinct_products(-0.764); total_items_purchased(-0.712),Loyal
+16682,0.44064322,0,0,recency_days(-0.775); customer_tenure_days(-0.516); frequency(+0.471),Loyal
+15925,0.4400131,0,1,frequency(+0.560); recency_days(-0.499); customer_tenure_days(-0.351),Lost
+16915,0.43957865,0,0,frequency(-0.569); avg_distinct_products(+0.181); customer_tenure_days(+0.146),Champions
+14439,0.43876585,0,1,monetary(-0.777); total_items_purchased(-0.689); recency_days(+0.558),Loyal
+14290,0.43797854,0,0,monetary(-0.639); total_items_purchased(-0.425); avg_order_value(+0.280),Champions
+14130,0.43667397,0,1,total_items_purchased(-1.038); recency_days(+0.533); avg_order_value(+0.407),At Risk
+17874,0.4323731,0,1,total_items_purchased(+0.607); customer_tenure_days(-0.326); return_rate(-0.324),Loyal
+15696,0.43230036,0,0,customer_tenure_days(+0.731); monetary(-0.562); credit_notes_per_order(+0.509),Champions
+16116,0.4303861,0,1,recency_days(-0.702); total_items_purchased(+0.489); frequency(+0.428),Lost
+14883,0.43024006,0,0,recency_days(-0.768); total_items_purchased(+0.490); frequency(+0.459),Loyal
+14810,0.42923275,0,0,frequency(-0.809); recency_days(-0.292); avg_order_value(+0.250),Champions
+12410,0.42663637,0,1,recency_days(+0.415); customer_tenure_days(-0.382); avg_order_value(-0.292),At Risk
+17924,0.42638484,0,0,customer_tenure_days(-0.415); return_rate(-0.404); monetary(-0.390),Champions
+14226,0.4256086,0,0,avg_order_value(+0.897); total_items_purchased(-0.711); monetary(-0.600),Champions
+13544,0.42559427,0,0,avg_distinct_products(-0.567); total_items_purchased(+0.437); customer_tenure_days(+0.358),Loyal
+15749,0.4248768,0,1,total_items_purchased(-1.487); monetary(-0.686); avg_order_value(+0.630),At Risk
+14912,0.4226248,0,0,total_items_purchased(-0.807); monetary(+0.483); credit_notes_per_order(+0.374),Loyal
+15980,0.41743144,0,0,avg_order_value(+1.200); total_items_purchased(-0.714); monetary(-0.601),Loyal
+17454,0.41739792,0,1,frequency(-0.790); total_items_purchased(+0.327); customer_tenure_days(+0.150),Loyal
+12990,0.41378593,0,0,frequency(-0.283); customer_tenure_days(+0.164); avg_order_value(-0.125),Loyal
+15449,0.41259062,0,0,recency_days(-0.688); customer_tenure_days(-0.502); frequency(+0.384),Potential Loyalist
+14870,0.4109966,0,1,total_items_purchased(+0.437); frequency(-0.372); monetary(-0.249),Loyal
+15646,0.41056266,0,0,return_rate(-0.169); frequency(-0.126); monetary(-0.126),Loyal
+13748,0.406816,0,0,frequency(-0.379); customer_tenure_days(+0.133); avg_distinct_products(+0.122),Loyal
+17521,0.40650722,0,0,recency_days(-0.581); avg_distinct_products(-0.347); frequency(+0.251),Champions
+13885,0.40431932,0,1,frequency(+0.472); customer_tenure_days(-0.448); recency_days(-0.379),Lost
+17164,0.40208894,0,0,recency_days(-0.743); customer_tenure_days(-0.584); frequency(+0.432),Champions
+12370,0.40098846,0,0,total_items_purchased(-0.717); frequency(-0.484); avg_order_value(+0.386),Champions
+15907,0.3988253,0,0,recency_days(-0.881); frequency(+0.576); customer_tenure_days(-0.456),Potential Loyalist
+18188,0.39877295,0,0,total_items_purchased(-0.329); monetary(-0.257); customer_tenure_days(+0.173),Champions
+15167,0.3972079,0,1,recency_days(+0.582); total_items_purchased(-0.380); avg_distinct_products(-0.306),Loyal
+16022,0.39089936,0,1,avg_distinct_products(-1.465); total_items_purchased(+0.635); frequency(+0.453),At Risk
+17970,0.3893716,0,1,recency_days(-0.757); frequency(+0.477); customer_tenure_days(-0.466),Lost
+17746,0.38382825,0,1,return_rate(-0.402); avg_order_value(-0.318); monetary(-0.249),At Risk
+12840,0.3776894,0,0,customer_tenure_days(+0.778); monetary(-0.654); total_items_purchased(-0.569),Loyal
+18177,0.37517068,0,0,recency_days(-0.692); frequency(-0.330); customer_tenure_days(+0.305),Champions
+13990,0.37477866,0,1,recency_days(-0.713); frequency(+0.498); customer_tenure_days(-0.413),Lost
+14288,0.37365904,0,1,recency_days(-0.717); monetary(+0.481); frequency(+0.466),Lost
+12346,0.37206113,0,1,total_items_purchased(-1.429); frequency(-0.822); recency_days(+0.569),At Risk
+14431,0.37073508,0,1,total_items_purchased(-1.058); monetary(-0.593); recency_days(+0.546),At Risk
+17406,0.370533,0,1,recency_days(+1.397); total_items_purchased(-0.974); frequency(-0.690),Loyal
+14935,0.3700023,0,1,total_items_purchased(-1.186); frequency(+0.709); monetary(-0.524),At Risk
+13712,0.3687802,0,1,total_items_purchased(-0.852); frequency(+0.654); avg_order_value(-0.579),At Risk
+14747,0.36758542,0,1,frequency(+0.476); return_rate(-0.415); customer_tenure_days(-0.358),Lost
+17398,0.36682197,0,0,recency_days(-0.840); total_items_purchased(+0.577); customer_tenure_days(-0.431),Others
+14730,0.3544645,0,0,customer_tenure_days(-0.362); avg_distinct_products(-0.285); avg_order_value(-0.269),Champions
+14622,0.35051283,0,1,recency_days(-1.031); frequency(+0.552); customer_tenure_days(-0.455),Others
+14702,0.34895062,0,0,total_items_purchased(-0.987); frequency(-0.805); recency_days(+0.708),Champions
+18142,0.34891304,0,0,recency_days(-0.683); frequency(+0.469); customer_tenure_days(-0.391),Others
+14696,0.34745786,0,0,total_items_purchased(-0.436); avg_order_value(-0.204); recency_days(-0.153),Champions
+13174,0.34689844,0,0,recency_days(+1.028); monetary(-0.762); total_items_purchased(-0.699),Champions
+17648,0.3466841,0,0,customer_tenure_days(-0.504); avg_distinct_products(+0.220); avg_order_value(-0.162),Loyal
+17913,0.3445173,0,0,recency_days(+1.168); total_items_purchased(-0.933); frequency(-0.736),Loyal
+16226,0.34380752,0,1,recency_days(-0.855); total_items_purchased(+0.361); frequency(-0.130),Loyal
+15116,0.34201846,0,0,recency_days(-1.121); frequency(+0.536); customer_tenure_days(-0.393),Potential Loyalist
+16872,0.34003508,0,0,total_items_purchased(-0.325); recency_days(-0.256); avg_distinct_products(+0.166),Loyal
+17007,0.3398712,0,0,recency_days(-0.731); customer_tenure_days(+0.219); return_rate(-0.152),Loyal
+13976,0.3382855,0,1,recency_days(-0.782); customer_tenure_days(+0.445); avg_distinct_products(-0.293),At Risk
+16249,0.33337006,0,0,recency_days(-1.096); customer_tenure_days(-0.451); frequency(+0.428),Champions
+15967,0.3315309,0,0,total_items_purchased(-0.661); recency_days(+0.527); monetary(-0.407),Champions
+15858,0.3306992,0,0,frequency(-0.901); total_items_purchased(-0.481); avg_distinct_products(+0.417),Champions
+14422,0.33056724,0,0,monetary(-0.981); frequency(-0.886); total_items_purchased(-0.719),Champions
+16306,0.32931238,0,1,recency_days(-0.393); frequency(-0.388); return_rate(-0.291),Loyal
+14113,0.32580268,0,0,recency_days(+1.141); frequency(-1.057); monetary(-0.754),Champions
+17764,0.3256718,0,0,recency_days(-0.584); total_items_purchased(+0.303); customer_tenure_days(-0.297),Champions
+17966,0.32308853,0,0,total_items_purchased(-0.637); frequency(-0.283); customer_tenure_days(+0.233),Champions
+15863,0.31739575,0,0,monetary(+0.496); total_items_purchased(-0.453); avg_order_value(-0.375),Others
+16692,0.31597635,0,1,total_items_purchased(-0.404); avg_order_value(+0.396); customer_tenure_days(-0.364),At Risk
+17988,0.31428054,0,0,frequency(-0.781); avg_order_value(-0.573); monetary(+0.401),Others
+17723,0.3137837,0,0,customer_tenure_days(-0.237); monetary(-0.233); avg_order_value(-0.188),Loyal
+15057,0.3119336,0,1,total_items_purchased(-0.908); customer_tenure_days(+0.644); monetary(-0.577),Loyal
+15660,0.3112563,0,0,recency_days(-0.654); frequency(-0.636); customer_tenure_days(+0.600),Champions
+13610,0.3091088,0,0,frequency(-0.894); total_items_purchased(+0.287); avg_distinct_products(-0.284),Champions
+13131,0.30457968,0,0,monetary(-0.807); total_items_purchased(-0.700); customer_tenure_days(+0.569),Champions
+13070,0.30401093,0,1,customer_tenure_days(-0.669); return_rate(-0.157); recency_days(+0.128),At Risk
+14256,0.3013265,0,1,monetary(-0.649); total_items_purchased(-0.648); avg_order_value(+0.295),Loyal
+13320,0.3011398,0,0,recency_days(-0.487); total_items_purchased(-0.379); customer_tenure_days(+0.346),Loyal
+15436,0.29916793,0,0,avg_distinct_products(-1.765); total_items_purchased(+0.490); customer_tenure_days(-0.453),Potential Loyalist
+14584,0.29455516,0,0,recency_days(-0.804); customer_tenure_days(+0.722); frequency(-0.456),Loyal
+13240,0.2929078,0,0,return_rate(-0.485); frequency(-0.350); total_items_purchased(+0.335),Loyal
+15987,0.28990823,0,0,total_items_purchased(-0.501); recency_days(-0.431); customer_tenure_days(-0.217),Champions
+16224,0.28942275,0,0,customer_tenure_days(-0.615); total_items_purchased(-0.335); avg_order_value(-0.335),Champions
+17593,0.28725913,0,0,recency_days(+0.832); total_items_purchased(-0.827); monetary(-0.628),Champions
+17095,0.2840669,0,0,total_items_purchased(-0.923); credit_notes_per_order(+0.406); frequency(-0.312),Champions
+18218,0.28386953,0,1,customer_tenure_days(+0.771); total_items_purchased(-0.646); recency_days(-0.416),At Risk
+17345,0.28320614,0,0,total_items_purchased(-0.685); customer_tenure_days(-0.428); frequency(-0.348),Champions
+16266,0.2789228,0,0,frequency(-1.052); recency_days(-0.635); customer_tenure_days(+0.477),Loyal
+14616,0.27873945,0,1,avg_order_value(-0.387); avg_distinct_products(-0.197); frequency(-0.185),At Risk
+17980,0.27671927,0,0,recency_days(-0.858); total_items_purchased(+0.450); customer_tenure_days(-0.445),Others
+16150,0.27668643,0,0,customer_tenure_days(+0.630); total_items_purchased(-0.624); monetary(-0.535),Champions
+17054,0.27337304,0,0,recency_days(-0.897); total_items_purchased(+0.474); customer_tenure_days(-0.448),Champions
+16711,0.27336952,0,0,return_rate(-0.562); frequency(-0.373); total_items_purchased(+0.322),Champions
+17138,0.26955336,0,1,total_items_purchased(-0.860); frequency(-0.686); monetary(-0.485),Loyal
+13209,0.26717964,0,0,total_items_purchased(-0.879); monetary(-0.744); customer_tenure_days(+0.711),Champions
+13439,0.26616785,0,1,total_items_purchased(-0.690); avg_distinct_products(-0.424); frequency(+0.358),At Risk
+15199,0.26503396,0,0,frequency(-0.758); monetary(-0.690); total_items_purchased(+0.280),Loyal
+13735,0.2648402,0,0,avg_order_value(+1.413); frequency(-0.931); total_items_purchased(-0.773),Champions
+13557,0.26206133,0,0,recency_days(+0.590); customer_tenure_days(+0.579); frequency(-0.571),Champions
+14653,0.26198494,0,0,total_items_purchased(-1.047); recency_days(+0.569); frequency(-0.382),Champions
+12585,0.26082084,0,1,avg_order_value(+0.880); total_items_purchased(-0.842); avg_distinct_products(-0.662),At Risk
+16593,0.26026472,0,0,customer_tenure_days(-0.614); frequency(-0.361); total_items_purchased(-0.259),Loyal
+15366,0.26025242,0,0,total_items_purchased(-1.160); recency_days(+0.932); frequency(-0.347),Loyal
+16456,0.25936767,0,0,total_items_purchased(-0.782); monetary(-0.684); frequency(-0.447),Loyal
+17351,0.25925383,0,0,frequency(-1.122); avg_order_value(-0.171); recency_days(+0.163),Champions
+16899,0.25726068,0,0,recency_days(-0.806); customer_tenure_days(-0.340); total_items_purchased(+0.315),Champions
+17410,0.25713208,0,0,recency_days(-0.793); frequency(+0.509); avg_order_value(-0.427),Champions
+16235,0.2555892,0,0,frequency(-0.419); monetary(-0.360); recency_days(-0.247),Champions
+17889,0.2543901,0,1,frequency(-0.570); recency_days(-0.472); avg_order_value(-0.287),Loyal
+15485,0.2501941,0,0,total_items_purchased(-1.035); recency_days(+0.673); frequency(-0.391),Champions
+12854,0.24980685,0,0,total_items_purchased(-0.710); customer_tenure_days(+0.578); monetary(-0.550),Loyal
+13506,0.24966298,0,1,total_items_purchased(-0.847); customer_tenure_days(-0.592); recency_days(+0.507),Loyal
+18093,0.24948114,0,0,total_items_purchased(-0.756); frequency(-0.429); monetary(-0.362),Loyal
+17426,0.24823861,0,0,frequency(-0.766); total_items_purchased(-0.653); recency_days(+0.511),Champions
+12656,0.2402725,0,0,avg_order_value(+1.177); total_items_purchased(-1.073); recency_days(-0.990),Champions
+18239,0.23982373,0,1,customer_tenure_days(-0.351); total_items_purchased(-0.281); frequency(-0.274),Loyal
+16696,0.23942327,0,0,recency_days(-1.095); frequency(+0.282); customer_tenure_days(-0.273),Others
+15058,0.23932053,0,0,recency_days(-0.831); customer_tenure_days(+0.524); total_items_purchased(-0.402),Champions
+17940,0.2373479,0,0,total_items_purchased(-1.304); monetary(-0.808); credit_notes_per_order(+0.605),Champions
+16434,0.23570842,0,0,frequency(-0.390); total_items_purchased(-0.336); avg_distinct_products(-0.280),Champions
+14231,0.23512338,0,1,recency_days(-1.199); total_items_purchased(+0.419); avg_order_value(-0.287),Others
+16817,0.23437062,0,0,return_rate(-0.333); monetary(-0.298); frequency(-0.263),Champions
+14195,0.23311882,0,1,recency_days(-0.865); total_items_purchased(-0.665); monetary(-0.475),Loyal
+13577,0.23302561,0,0,total_items_purchased(-0.654); customer_tenure_days(+0.631); frequency(-0.601),Champions
+13037,0.23163703,0,0,total_items_purchased(-0.636); monetary(-0.265); customer_tenure_days(-0.134),Loyal
+18283,0.23121235,0,0,customer_tenure_days(+0.667); avg_order_value(-0.663); avg_distinct_products(-0.624),Champions
+15658,0.22973399,0,1,frequency(-0.488); monetary(-0.407); return_rate(-0.348),Loyal
+14776,0.22885048,0,0,total_items_purchased(-0.859); frequency(-0.445); monetary(-0.065),Champions
+14004,0.22849275,0,0,total_items_purchased(-0.804); monetary(-0.629); customer_tenure_days(-0.398),Champions
+14401,0.2268341,0,0,total_items_purchased(-0.487); recency_days(+0.388); avg_distinct_products(-0.361),Champions
+16326,0.22370762,0,0,frequency(-1.175); recency_days(-0.527); customer_tenure_days(+0.476),Champions
+16943,0.22272733,0,1,recency_days(-0.608); customer_tenure_days(+0.216); frequency(-0.195),Loyal
+15367,0.2223909,0,0,frequency(-1.048); total_items_purchased(-0.746); monetary(-0.568),Champions
+13227,0.22207773,0,1,recency_days(-1.207); frequency(+0.541); customer_tenure_days(-0.337),Lost
+13862,0.2198804,0,0,total_items_purchased(-0.501); customer_tenure_days(-0.428); credit_notes_per_order(-0.153),Champions
+17720,0.21956985,0,0,total_items_purchased(-0.728); frequency(-0.543); avg_order_value(-0.201),Champions
+12406,0.21826272,0,0,recency_days(-0.996); total_items_purchased(-0.572); avg_order_value(+0.561),Champions
+16043,0.21371552,0,0,frequency(-0.474); recency_days(-0.439); avg_order_value(-0.211),Champions
+14593,0.21354824,0,0,avg_distinct_products(-0.684); total_items_purchased(-0.626); credit_notes_per_order(+0.370),Champions
+15301,0.2132572,0,0,monetary(-0.731); total_items_purchased(-0.624); frequency(-0.363),Champions
+13623,0.21301292,0,0,frequency(-0.742); recency_days(-0.536); customer_tenure_days(+0.334),Champions
+13479,0.21263532,0,1,recency_days(-0.771); avg_order_value(-0.269); return_rate(-0.236),At Risk
+15518,0.21035168,0,0,monetary(-0.475); recency_days(-0.398); total_items_purchased(-0.373),Loyal
+14364,0.20999306,0,0,total_items_purchased(-0.545); recency_days(-0.434); customer_tenure_days(-0.336),Loyal
+16134,0.2096086,0,0,total_items_purchased(-1.135); customer_tenure_days(-0.521); recency_days(+0.389),Champions
+15299,0.20555323,0,0,total_items_purchased(-0.811); frequency(-0.640); avg_order_value(+0.367),Loyal
+17227,0.20547237,0,0,total_items_purchased(-0.601); frequency(-0.577); avg_order_value(-0.120),Champions
+17888,0.20507818,0,0,frequency(-1.681); recency_days(-0.306); avg_order_value(-0.298),Champions
+16609,0.20406267,0,0,customer_tenure_days(-0.680); avg_distinct_products(-0.364); frequency(+0.361),Champions
+13630,0.20307179,0,0,recency_days(-0.720); customer_tenure_days(-0.636); frequency(+0.236),Champions
+13631,0.20162337,0,0,recency_days(-0.932); customer_tenure_days(-0.243); total_items_purchased(+0.181),Loyal
+14496,0.20159087,0,1,frequency(-0.646); total_items_purchased(-0.399); recency_days(+0.343),Loyal
+14844,0.2002659,0,0,total_items_purchased(-0.960); frequency(-0.654); monetary(-0.599),Loyal
+13963,0.19626485,0,1,frequency(-0.871); total_items_purchased(-0.796); recency_days(+0.749),Loyal
+16668,0.19440384,0,0,frequency(-1.124); recency_days(-0.381); total_items_purchased(+0.277),Loyal
+17252,0.19380036,0,0,avg_distinct_products(-1.443); customer_tenure_days(-0.546); recency_days(-0.541),Others
+14850,0.1922941,0,1,total_items_purchased(-1.121); frequency(-0.484); recency_days(+0.373),Loyal
+17002,0.19158475,0,0,total_items_purchased(-0.568); recency_days(-0.334); frequency(-0.313),Loyal
+16003,0.18983603,0,0,total_items_purchased(-1.042); monetary(-0.491); frequency(-0.389),Champions
+17029,0.18827388,0,0,total_items_purchased(-0.817); frequency(-0.319); avg_order_value(-0.176),Loyal
+13295,0.18787003,0,1,return_rate(-0.625); total_items_purchased(-0.353); avg_distinct_products(-0.182),At Risk
+14540,0.18585028,0,0,frequency(-0.981); total_items_purchased(-0.909); recency_days(+0.493),Champions
+12633,0.18356721,0,0,total_items_purchased(-0.793); avg_order_value(+0.730); monetary(-0.661),Loyal
+14978,0.18116166,0,0,frequency(-1.230); monetary(-0.706); customer_tenure_days(+0.269),Loyal
+13157,0.17964284,0,0,total_items_purchased(-1.003); frequency(-0.639); monetary(-0.555),Champions
+14907,0.17904228,0,0,total_items_purchased(-0.888); monetary(-0.481); recency_days(+0.426),Champions
+12500,0.17863137,0,0,total_items_purchased(-0.787); frequency(-0.617); recency_days(+0.535),Champions
+12645,0.17669116,0,0,total_items_purchased(-0.915); monetary(-0.609); customer_tenure_days(+0.599),Champions
+16062,0.17641619,0,0,total_items_purchased(-0.947); frequency(-0.377); avg_order_value(-0.314),Champions
+17146,0.1762956,0,0,frequency(-1.054); monetary(-0.978); total_items_purchased(-0.670),Loyal
+18136,0.17601089,0,0,recency_days(-0.591); return_rate(-0.304); avg_order_value(-0.260),Loyal
+16059,0.17492306,0,0,frequency(-0.929); total_items_purchased(-0.678); avg_distinct_products(+0.336),Loyal
+16255,0.17445265,0,0,total_items_purchased(-0.851); monetary(-0.445); return_rate(-0.309),Champions
+14129,0.17428222,0,0,total_items_purchased(-0.733); avg_order_value(-0.361); monetary(-0.239),Champions
+14145,0.17297135,0,0,monetary(-0.854); total_items_purchased(-0.835); avg_order_value(+0.482),Champions
+17790,0.17194824,0,0,frequency(-1.000); recency_days(-0.523); monetary(-0.225),Champions
+13280,0.17096584,0,0,total_items_purchased(-1.023); frequency(-0.389); recency_days(+0.372),Loyal
+17147,0.17059357,0,0,recency_days(-0.665); customer_tenure_days(+0.470); frequency(-0.399),Champions
+12348,0.16647772,0,0,total_items_purchased(-0.904); customer_tenure_days(-0.390); monetary(-0.340),Loyal
+13340,0.16364183,0,0,total_items_purchased(-1.042); monetary(-0.841); frequency(-0.571),Champions
+13611,0.16335914,0,0,total_items_purchased(-0.991); frequency(-0.533); monetary(-0.520),Loyal
+15620,0.16171947,0,0,customer_tenure_days(-0.514); total_items_purchased(-0.348); return_rate(-0.347),Potential Loyalist
+17669,0.15971,0,0,monetary(-0.704); total_items_purchased(-0.664); frequency(-0.410),Champions
+15117,0.15962763,0,0,total_items_purchased(-0.964); avg_order_value(-0.326); recency_days(-0.305),Champions
+13077,0.15829821,0,0,frequency(-0.851); total_items_purchased(-0.494); monetary(-0.456),Champions
+13715,0.15829146,0,1,frequency(-1.074); total_items_purchased(-1.051); monetary(-0.966),Loyal
+12826,0.15828489,0,0,total_items_purchased(-1.003); frequency(-0.647); recency_days(+0.327),Champions
+16837,0.15812661,0,0,customer_tenure_days(-0.585); frequency(-0.566); monetary(-0.333),Champions
+12501,0.1571025,0,1,avg_distinct_products(-1.544); total_items_purchased(-1.064); recency_days(+0.991),At Risk
+15722,0.15700765,0,0,total_items_purchased(-0.808); customer_tenure_days(+0.699); frequency(-0.599),Champions
+14916,0.15587898,0,0,total_items_purchased(-1.153); recency_days(+0.531); return_rate(-0.309),Loyal
+12383,0.15439452,0,1,total_items_purchased(-0.832); recency_days(-0.590); monetary(-0.331),Loyal
+13397,0.14895357,0,0,recency_days(-0.780); monetary(-0.730); total_items_purchased(-0.538),Loyal
+13134,0.14846686,0,0,recency_days(-1.155); return_rate(-0.298); avg_order_value(-0.273),Loyal
+16325,0.14806436,0,0,frequency(-0.934); total_items_purchased(-0.598); monetary(-0.553),Champions
+12766,0.14682746,0,0,avg_order_value(+1.149); total_items_purchased(-1.036); monetary(-0.743),Champions
+12710,0.14642107,0,0,recency_days(-1.115); avg_distinct_products(-0.563); customer_tenure_days(-0.509),Others
+14515,0.14627305,0,0,frequency(-0.575); monetary(-0.452); total_items_purchased(-0.440),Champions
+16499,0.14625347,0,1,total_items_purchased(-0.973); monetary(-0.574); frequency(-0.541),Loyal
+14312,0.14622197,0,0,frequency(-0.844); total_items_purchased(-0.586); monetary(-0.173),Champions
+15704,0.1457684,0,0,total_items_purchased(-0.938); monetary(-0.628); customer_tenure_days(+0.490),Loyal
+16775,0.14556023,0,0,frequency(-1.194); recency_days(-0.667); monetary(-0.394),Champions
+15563,0.14395459,0,0,recency_days(-0.952); total_items_purchased(-0.760); customer_tenure_days(+0.675),Champions
+15107,0.1438501,0,1,frequency(-0.970); avg_order_value(-0.392); customer_tenure_days(-0.365),Loyal
+16374,0.14378776,0,0,avg_distinct_products(-1.587); total_items_purchased(+0.447); frequency(-0.275),Loyal
+16232,0.14324372,0,0,total_items_purchased(-0.891); recency_days(-0.324); avg_order_value(-0.287),Champions
+13437,0.14294574,0,0,avg_distinct_products(-1.510); customer_tenure_days(-0.528); recency_days(-0.507),Champions
+16875,0.13994548,0,0,frequency(-0.888); total_items_purchased(-0.706); monetary(-0.483),Loyal
+15572,0.13982682,0,0,total_items_purchased(-1.032); frequency(-0.509); monetary(-0.413),Champions
+16098,0.13810322,0,0,total_items_purchased(-0.658); monetary(-0.547); customer_tenure_days(-0.309),Loyal
+14409,0.13699767,0,0,total_items_purchased(-0.970); return_rate(-0.470); frequency(-0.311),Loyal
+14482,0.13666746,0,0,total_items_purchased(-0.920); frequency(-0.428); monetary(-0.259),Champions
+14669,0.13483383,0,1,total_items_purchased(-0.946); monetary(-0.540); frequency(-0.490),Loyal
+17744,0.13215663,0,0,total_items_purchased(-0.833); customer_tenure_days(-0.533); return_rate(-0.411),Champions
+12757,0.13193102,0,0,recency_days(-0.730); customer_tenure_days(-0.516); total_items_purchased(+0.290),Champions
+17685,0.13101432,0,0,frequency(-0.994); total_items_purchased(-0.577); monetary(-0.416),Champions
+15201,0.12993647,0,0,recency_days(-0.769); total_items_purchased(-0.722); avg_order_value(-0.240),Loyal
+17063,0.12878762,0,0,total_items_purchased(-0.760); frequency(-0.646); monetary(-0.615),Champions
+12700,0.12847553,0,0,avg_distinct_products(-1.864); avg_order_value(+0.679); customer_tenure_days(-0.489),Potential Loyalist
+12924,0.12844114,0,0,total_items_purchased(-0.560); customer_tenure_days(-0.486); monetary(-0.351),Loyal
+15023,0.12780121,0,0,frequency(-1.096); monetary(-0.970); total_items_purchased(-0.911),Champions
+17526,0.12467688,0,0,total_items_purchased(-0.808); monetary(-0.459); avg_distinct_products(-0.235),Champions
+17050,0.124321274,0,0,frequency(-0.859); total_items_purchased(-0.577); monetary(-0.572),Loyal
+16727,0.123972334,0,1,total_items_purchased(-1.156); avg_distinct_products(-0.588); recency_days(+0.328),At Risk
+13564,0.12312357,0,1,recency_days(+1.364); total_items_purchased(-1.344); frequency(-1.260),Loyal
+17769,0.12245986,0,0,frequency(-1.075); total_items_purchased(-0.944); monetary(-0.420),Champions
+17659,0.12169133,0,0,recency_days(-0.603); customer_tenure_days(-0.396); frequency(-0.341),Champions
+16283,0.12096931,0,0,avg_order_value(+1.387); avg_distinct_products(-1.300); total_items_purchased(-0.959),Champions
+12976,0.11764215,0,1,frequency(-0.737); total_items_purchased(-0.644); monetary(-0.624),Loyal
+17491,0.11486491,0,0,recency_days(-0.634); total_items_purchased(-0.540); monetary(-0.475),Champions
+12429,0.11475358,0,0,total_items_purchased(-0.951); monetary(-0.639); frequency(-0.437),Champions
+18178,0.111229636,0,0,frequency(-1.043); monetary(-0.910); total_items_purchased(-0.857),Loyal
+15527,0.10890193,0,0,frequency(-1.133); total_items_purchased(-0.767); monetary(-0.375),Champions
+17602,0.10887804,0,0,frequency(-1.060); recency_days(+0.926); total_items_purchased(-0.763),Champions
+13941,0.10711316,0,0,monetary(-1.034); frequency(-0.920); total_items_purchased(-0.731),Champions
+17314,0.10509085,0,0,frequency(-1.113); total_items_purchased(-0.686); monetary(-0.510),Champions
+14649,0.102769434,0,0,total_items_purchased(-0.951); customer_tenure_days(+0.638); frequency(-0.581),Champions
+15032,0.10244823,0,1,total_items_purchased(-1.130); monetary(-1.032); frequency(-0.765),Loyal
+14898,0.100272454,0,0,total_items_purchased(-0.803); frequency(-0.753); monetary(-0.541),Champions
+14161,0.099054664,0,1,total_items_purchased(-0.717); monetary(-0.575); frequency(-0.482),Loyal
+16670,0.09640203,0,0,frequency(-1.049); monetary(-1.033); total_items_purchased(-0.858),Champions
+15950,0.09579644,0,0,total_items_purchased(-1.011); avg_order_value(+0.887); monetary(-0.673),Champions
+18094,0.09405677,0,0,monetary(-1.100); frequency(-1.027); total_items_purchased(-0.777),Loyal
+14388,0.09397153,0,0,recency_days(-1.096); total_items_purchased(-0.892); monetary(-0.612),Champions
+17061,0.093080565,0,0,monetary(-0.686); total_items_purchased(-0.610); frequency(-0.437),Loyal
+12782,0.092706695,0,0,frequency(-1.008); total_items_purchased(-0.847); monetary(-0.443),Champions
+12947,0.0903098,0,0,recency_days(-0.943); total_items_purchased(-0.514); customer_tenure_days(-0.484),Loyal
+14062,0.08861588,0,0,total_items_purchased(-1.449); frequency(-1.162); monetary(-0.760),Champions
+14243,0.08562649,0,0,monetary(-1.077); total_items_purchased(-0.949); frequency(-0.926),Champions
+17400,0.08353913,0,0,total_items_purchased(-0.810); monetary(-0.510); avg_distinct_products(-0.455),Loyal
+14817,0.08333475,0,1,recency_days(-0.978); total_items_purchased(-0.827); frequency(-0.553),Loyal
+15976,0.08024559,0,0,avg_distinct_products(-1.572); avg_order_value(-0.318); total_items_purchased(-0.261),Loyal
+16409,0.07823985,0,0,avg_distinct_products(-1.034); frequency(-0.970); total_items_purchased(-0.771),Champions
+14099,0.0777666,0,0,total_items_purchased(-0.873); frequency(-0.863); monetary(-0.403),Champions
+15034,0.07487507,0,0,total_items_purchased(-0.982); monetary(-0.944); frequency(-0.572),Champions
+13027,0.0728933,0,0,total_items_purchased(-1.544); frequency(-1.000); monetary(-0.882),Loyal
+12939,0.07283222,0,0,total_items_purchased(-1.288); frequency(-0.918); monetary(-0.834),Loyal
+15532,0.07244824,0,0,monetary(-0.673); recency_days(+0.651); frequency(-0.643),Champions
+15125,0.07203707,0,0,avg_order_value(+1.185); frequency(-1.126); total_items_purchased(-0.998),Champions
+14344,0.07073231,0,0,frequency(-0.980); recency_days(-0.753); total_items_purchased(-0.671),Loyal
+15819,0.069644466,0,0,total_items_purchased(-0.867); recency_days(-0.705); frequency(-0.675),Champions
+14970,0.06728873,0,0,frequency(-1.228); monetary(-0.685); total_items_purchased(-0.242),Loyal
+13115,0.06623157,0,0,recency_days(-1.072); total_items_purchased(-0.717); monetary(-0.608),Champions
+17722,0.06566951,0,0,customer_tenure_days(-0.697); total_items_purchased(-0.636); avg_order_value(+0.602),Loyal
+15862,0.06513379,0,0,recency_days(-0.675); total_items_purchased(-0.507); avg_order_value(-0.463),Champions
+13880,0.06493107,0,0,frequency(-0.827); total_items_purchased(-0.776); monetary(-0.726),Champions
+13985,0.06445173,0,0,frequency(-0.891); total_items_purchased(-0.777); monetary(-0.665),Champions
+17686,0.06432312,0,0,total_items_purchased(-0.974); avg_order_value(+0.956); monetary(-0.827),Champions
+15955,0.06422257,0,0,recency_days(-1.212); monetary(-1.027); total_items_purchased(-0.661),Champions
+17160,0.06287577,0,0,total_items_purchased(-1.096); frequency(-1.049); monetary(-0.863),Champions
+16743,0.06286312,0,0,frequency(-1.010); total_items_purchased(-0.635); monetary(-0.572),Champions
+16202,0.06267057,0,1,total_items_purchased(-0.949); frequency(-0.918); monetary(-0.555),Loyal
+17929,0.062609136,0,0,frequency(-1.329); monetary(-0.811); avg_distinct_products(-0.423),Champions
+15752,0.058090203,0,0,avg_distinct_products(-1.517); total_items_purchased(-0.970); avg_order_value(+0.355),Champions
+17612,0.057076722,0,0,frequency(-0.804); total_items_purchased(-0.488); recency_days(-0.434),Champions
+13842,0.056410458,0,0,frequency(-1.060); recency_days(-0.901); total_items_purchased(-0.825),Loyal
+16960,0.05459214,0,0,avg_distinct_products(-1.206); total_items_purchased(-0.947); customer_tenure_days(+0.375),Champions
+13555,0.054028615,0,0,recency_days(-1.227); monetary(-1.051); total_items_purchased(-0.778),Loyal
+17107,0.053072844,0,0,avg_distinct_products(-1.225); total_items_purchased(-1.060); monetary(-0.728),Champions
+16156,0.05285184,0,0,frequency(-1.204); total_items_purchased(-0.776); recency_days(-0.732),Champions
+17220,0.052201785,0,0,frequency(-0.928); total_items_purchased(-0.855); recency_days(-0.720),Champions
+13659,0.050133124,0,1,frequency(-1.099); recency_days(-0.928); monetary(-0.774),Loyal
+15674,0.049180355,0,0,frequency(-1.129); monetary(-1.000); total_items_purchased(-0.727),Loyal
+16873,0.048492942,0,0,total_items_purchased(-1.261); frequency(-1.215); monetary(-0.919),Champions
+14047,0.04793353,0,0,frequency(-0.939); recency_days(-0.875); total_items_purchased(-0.817),Champions
+12395,0.047738418,0,0,frequency(-1.097); total_items_purchased(-0.629); monetary(-0.493),Champions
+15622,0.046107553,0,0,frequency(-1.491); monetary(-1.077); total_items_purchased(-0.874),Champions
+15916,0.045370113,0,0,monetary(-0.741); customer_tenure_days(-0.685); frequency(-0.677),Champions
+13848,0.045160938,0,0,total_items_purchased(-1.350); frequency(-0.610); monetary(-0.489),Loyal
+16713,0.044550404,0,0,frequency(-1.639); total_items_purchased(-1.143); monetary(-0.780),Champions
+13911,0.04412192,0,0,frequency(-1.478); total_items_purchased(-0.879); customer_tenure_days(+0.608),Champions
+16072,0.042403884,0,1,avg_distinct_products(-1.689); total_items_purchased(-0.983); monetary(-0.457),At Risk
+16912,0.042327404,0,0,frequency(-0.853); monetary(-0.725); recency_days(-0.660),Champions
+14341,0.04231002,0,0,frequency(-0.906); total_items_purchased(-0.860); monetary(-0.545),Champions
+17663,0.04011166,0,0,frequency(-1.219); total_items_purchased(-0.940); recency_days(-0.621),Champions
+17243,0.039621834,0,0,frequency(-1.317); total_items_purchased(-1.060); monetary(-0.764),Champions
+15394,0.039092816,0,0,recency_days(-0.940); frequency(-0.919); total_items_purchased(-0.788),Champions
+15785,0.038526785,0,0,frequency(-1.300); total_items_purchased(-0.847); monetary(-0.776),Champions
+16791,0.03777409,0,0,frequency(-0.892); total_items_purchased(-0.696); avg_distinct_products(-0.596),Champions
+15296,0.036940563,0,0,recency_days(-1.171); frequency(-0.990); total_items_purchased(-0.959),Champions
+14367,0.03529792,0,0,recency_days(-0.895); total_items_purchased(-0.829); monetary(-0.616),Champions
+12359,0.035076305,0,0,frequency(-1.053); monetary(-0.905); total_items_purchased(-0.654),Champions
+16293,0.03414941,0,0,frequency(-0.845); recency_days(-0.796); monetary(-0.746),Champions
+14733,0.034128863,0,0,total_items_purchased(-1.129); monetary(-1.026); recency_days(-0.766),Champions
+12726,0.030747628,0,0,frequency(-1.054); total_items_purchased(-0.827); monetary(-0.625),Champions
+13317,0.030269418,0,0,frequency(-1.248); monetary(-1.056); total_items_purchased(-0.830),Loyal
+14210,0.029888712,0,0,frequency(-1.475); monetary(-1.035); total_items_purchased(-0.715),Loyal
+12471,0.029386068,0,0,frequency(-1.387); total_items_purchased(-1.122); monetary(-0.742),Champions
+13769,0.02849158,0,0,frequency(-1.000); recency_days(-0.909); total_items_purchased(-0.870),Champions
+17377,0.027374355,0,0,frequency(-1.499); total_items_purchased(-1.167); monetary(-0.824),Champions
+17589,0.027226275,0,0,frequency(-1.464); total_items_purchased(-1.397); avg_order_value(+1.009),Loyal
+12841,0.027201604,0,0,frequency(-1.478); monetary(-0.954); total_items_purchased(-0.948),Champions
+15544,0.02711453,0,0,frequency(-1.253); total_items_purchased(-1.142); monetary(-1.013),Champions
+15981,0.027046131,0,0,frequency(-1.277); monetary(-1.031); total_items_purchased(-0.748),Champions
+17690,0.02630011,0,0,frequency(-1.504); monetary(-1.072); recency_days(-0.604),Champions
+15271,0.02609551,0,0,frequency(-0.997); total_items_purchased(-0.901); recency_days(-0.752),Champions
+12415,0.026015677,0,0,total_items_purchased(-1.497); frequency(-1.352); recency_days(-0.971),Champions
+14688,0.025822707,0,0,frequency(-1.352); total_items_purchased(-1.102); monetary(-0.664),Champions
+17700,0.02579134,0,0,frequency(-1.079); monetary(-1.005); total_items_purchased(-0.789),Champions
+13450,0.025046315,0,0,frequency(-1.077); recency_days(-0.919); total_items_purchased(-0.776),Champions
+13225,0.024772946,0,0,frequency(-1.536); monetary(-1.104); total_items_purchased(-1.010),Champions
+15291,0.02447797,0,0,frequency(-1.886); total_items_purchased(-0.933); monetary(-0.929),Champions
+14867,0.022180717,0,1,frequency(-1.404); monetary(-0.749); customer_tenure_days(-0.636),Loyal
+13599,0.021583676,0,0,frequency(-1.830); monetary(-0.993); recency_days(-0.695),Champions
+13113,0.021217886,0,0,frequency(-1.948); monetary(-1.050); total_items_purchased(-0.794),Champions
+14292,0.020432137,0,0,monetary(-1.073); frequency(-1.029); recency_days(-0.803),Champions
+16883,0.020037355,0,1,frequency(-1.855); customer_tenure_days(-0.644); recency_days(-0.476),Loyal
+13993,0.019809509,0,0,frequency(-1.019); recency_days(-0.933); total_items_purchased(-0.792),Champions
+17519,0.018114341,0,0,recency_days(-0.930); frequency(-0.914); total_items_purchased(-0.798),Champions
+12490,0.017395075,0,0,frequency(-1.184); monetary(-1.021); total_items_purchased(-0.877),Champions
+14796,0.015034344,0,0,frequency(-1.560); total_items_purchased(-0.944); monetary(-0.894),Champions
+17457,0.014819865,0,0,frequency(-1.263); monetary(-1.209); recency_days(-0.800),Loyal
+12678,0.014580036,0,0,total_items_purchased(-1.507); frequency(-1.450); monetary(-0.821),Champions
+15290,0.012899576,0,0,frequency(-1.350); recency_days(-1.206); total_items_purchased(-0.943),Champions
+14903,0.012405959,0,0,avg_distinct_products(-1.632); recency_days(-0.812); customer_tenure_days(-0.663),Champions
+18229,0.011816812,0,0,frequency(-1.535); monetary(-1.061); total_items_purchased(-0.700),Champions
+14239,0.011805786,0,0,frequency(-1.222); recency_days(-0.992); total_items_purchased(-0.803),Champions
+13263,0.011750375,0,0,frequency(-1.780); total_items_purchased(-1.055); monetary(-0.719),Champions
+14667,0.010695155,0,0,frequency(-1.629); total_items_purchased(-1.340); monetary(-0.797),Champions
+17735,0.0103944335,0,0,frequency(-1.571); total_items_purchased(-1.218); recency_days(-0.884),Champions
+17757,0.010275631,0,0,frequency(-2.035); monetary(-1.095); total_items_purchased(-0.811),Champions
+14769,0.00991992,0,0,total_items_purchased(-1.458); frequency(-1.184); recency_days(-1.169),Champions
+16170,0.009863654,0,0,frequency(-1.606); recency_days(-1.298); total_items_purchased(-1.088),Champions
+16011,0.008296332,0,0,frequency(-1.974); recency_days(-0.883); customer_tenure_days(-0.658),Champions
+17364,0.0080466615,0,0,frequency(-1.701); total_items_purchased(-1.104); recency_days(-1.080),Champions
+14646,0.0077781077,0,0,frequency(-1.929); total_items_purchased(-1.548); customer_tenure_days(-0.607),Champions
+17338,0.007499347,0,0,frequency(-1.266); recency_days(-1.072); monetary(-1.014),Champions
+17696,0.007385176,0,0,frequency(-1.931); monetary(-0.988); total_items_purchased(-0.969),Champions
+14156,0.0069313906,0,0,frequency(-1.853); total_items_purchased(-1.495); recency_days(-0.768),Champions
+17091,0.0065762005,0,0,frequency(-1.500); monetary(-0.985); total_items_purchased(-0.975),Champions
+15061,0.0065083564,0,0,frequency(-1.870); total_items_purchased(-1.489); recency_days(-0.987),Champions
+13854,0.0062820567,0,0,frequency(-2.169); monetary(-1.230); total_items_purchased(-0.908),Champions
+14525,0.006281366,0,0,frequency(-1.468); monetary(-0.993); total_items_purchased(-0.986),Champions
+16782,0.006015701,0,0,frequency(-1.654); recency_days(-0.992); total_items_purchased(-0.971),Champions
+12779,0.005922226,0,0,frequency(-1.422); monetary(-1.011); total_items_purchased(-0.847),Champions
+18118,0.0058440925,0,0,frequency(-1.403); total_items_purchased(-0.859); avg_distinct_products(-0.743),Champions
+17949,0.0057818033,0,0,frequency(-2.206); total_items_purchased(-1.608); avg_order_value(+0.910),Champions
+13327,0.005739156,0,0,frequency(-1.539); monetary(-1.000); total_items_purchased(-0.973),Champions
+18231,0.0057108086,0,1,frequency(-2.052); monetary(-1.021); total_items_purchased(-0.886),Loyal
+13969,0.00563547,0,0,frequency(-2.052); recency_days(-1.294); monetary(-1.023),Champions
+12417,0.005376478,0,0,frequency(-1.551); monetary(-0.961); total_items_purchased(-0.867),Champions
+12980,0.0053453194,0,0,frequency(-2.086); monetary(-1.122); total_items_purchased(-1.013),Loyal
+17372,0.0051976657,0,0,frequency(-1.878); recency_days(-1.182); customer_tenure_days(-0.800),Champions
+13102,0.0049758744,0,0,frequency(-1.931); total_items_purchased(-1.168); monetary(-1.106),Champions
+13050,0.004638624,0,0,frequency(-1.947); total_items_purchased(-1.046); recency_days(-0.825),Champions
+16945,0.0043988954,0,0,frequency(-1.753); recency_days(-1.189); monetary(-1.073),Champions
+13418,0.004397705,0,0,frequency(-1.746); monetary(-1.101); total_items_purchased(-1.095),Champions
+13001,0.0042533344,0,0,frequency(-1.886); total_items_purchased(-1.433); recency_days(-1.142),Champions
+14828,0.0041840416,0,1,frequency(-1.597); total_items_purchased(-1.593); monetary(-1.050),Loyal
+16550,0.0040164404,0,0,frequency(-1.514); total_items_purchased(-1.158); monetary(-0.972),Loyal
+13069,0.003804713,0,0,frequency(-2.107); total_items_purchased(-1.485); monetary(-1.054),Champions
+18061,0.0036540956,0,0,frequency(-1.811); monetary(-1.121); total_items_purchased(-1.026),Champions
+15547,0.0034612485,0,0,frequency(-2.029); total_items_purchased(-1.300); monetary(-0.907),Champions
+15856,0.0032249114,0,0,frequency(-1.647); total_items_purchased(-1.503); recency_days(-1.161),Champions
+16656,0.0030228328,0,0,frequency(-2.064); total_items_purchased(-1.538); monetary(-1.068),Champions
+16746,0.003013273,0,0,frequency(-2.016); total_items_purchased(-1.514); monetary(-0.851),Champions
+13777,0.0030006277,0,0,frequency(-1.978); total_items_purchased(-1.448); monetary(-0.962),Champions
+16558,0.0029732636,0,0,frequency(-2.073); total_items_purchased(-1.171); monetary(-0.988),Champions
+15867,0.0027802044,0,0,frequency(-2.011); recency_days(-1.202); total_items_purchased(-0.887),Champions
+16525,0.0024808259,0,0,frequency(-1.935); total_items_purchased(-1.410); recency_days(-0.971),Champions
+15719,0.0023972327,0,0,frequency(-1.802); total_items_purchased(-1.036); recency_days(-0.927),Champions
+14040,0.0023403373,0,0,frequency(-1.938); recency_days(-1.255); monetary(-0.902),Champions
+16843,0.00230428,0,0,frequency(-1.950); total_items_purchased(-1.518); monetary(-1.019),Champions
+15601,0.0022553168,0,0,frequency(-1.771); total_items_purchased(-1.506); recency_days(-1.282),Champions
+16779,0.0021443204,0,0,frequency(-1.805); recency_days(-1.477); total_items_purchased(-1.347),Champions
+13199,0.0020963019,0,0,frequency(-2.069); total_items_purchased(-1.628); monetary(-0.989),Champions
+15005,0.0019334173,0,0,frequency(-1.916); total_items_purchased(-1.306); monetary(-0.893),Champions
+15738,0.0018517377,0,0,frequency(-1.863); total_items_purchased(-1.449); recency_days(-1.300),Champions
+13004,0.0014569375,0,0,frequency(-1.909); recency_days(-1.221); total_items_purchased(-1.076),Champions

@@ -1,0 +1,100 @@
+{
+  "n_customers_scored": 2648,
+  "observed_churn_rate": 0.2961,
+  "train_size": 1986,
+  "test_size": 662,
+  "scale_pos_weight": 2.3776,
+  "auc_roc": 0.7488,
+  "precision": 0.5,
+  "recall": 0.6122,
+  "f1_score": 0.5505,
+  "accuracy": 0.7039,
+  "confusion_matrix": {
+    "labels": [
+      "retained(0)",
+      "churned(1)"
+    ],
+    "matrix": [
+      [
+        346,
+        120
+      ],
+      [
+        76,
+        120
+      ]
+    ]
+  },
+  "feature_window": [
+    "2009-12-01",
+    "2011-06-09"
+  ],
+  "active_window": [
+    "2010-12-10",
+    "2011-06-09"
+  ],
+  "outcome_window": [
+    "2011-06-10",
+    "2011-12-09"
+  ],
+  "label_rule": "churned = 1 unless outcome-window net sales (sales - returns) > 0",
+  "customers_bought_in_outcome_but_net_nonpositive": 6,
+  "out_of_time": {
+    "description": "Same features/label/hyperparameters, trained on the whole earlier snapshot and evaluated on the headline snapshot",
+    "train_snapshot": {
+      "feature": [
+        "2009-12-01",
+        "2010-12-09"
+      ],
+      "active": [
+        "2010-06-10",
+        "2010-12-09"
+      ],
+      "outcome": [
+        "2010-12-10",
+        "2011-06-09"
+      ],
+      "n_customers": 3506,
+      "churn_rate": 0.4843,
+      "scale_pos_weight": 1.0648
+    },
+    "eval_all_scored_customers": {
+      "n": 2648,
+      "churn_rate": 0.2961,
+      "auc_roc": 0.7682,
+      "precision": 0.4715,
+      "recall": 0.7793,
+      "f1_score": 0.5875,
+      "accuracy": 0.676,
+      "confusion_matrix": [
+        [
+          1179,
+          685
+        ],
+        [
+          173,
+          611
+        ]
+      ]
+    },
+    "eval_headline_test_split": {
+      "n": 662,
+      "churn_rate": 0.2961,
+      "auc_roc": 0.7555,
+      "precision": 0.4665,
+      "recall": 0.7806,
+      "f1_score": 0.584,
+      "accuracy": 0.6707,
+      "confusion_matrix": [
+        [
+          291,
+          175
+        ],
+        [
+          43,
+          153
+        ]
+      ]
+    }
+  }
+}

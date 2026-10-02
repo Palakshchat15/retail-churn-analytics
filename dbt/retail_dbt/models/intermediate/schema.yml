@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: int_customer_orders
+    description: "Order-level rollup per customer, base for RFM."
+    columns:
+      - name: customer_id
+        tests: [not_null]
+      - name: invoice
+        tests: [not_null]
+      - name: order_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['sale', 'credit_note']
+
+  - name: int_customer_rfm_base
+    description: "Raw RFM metrics per customer (recency/frequency/monetary + return behavior). Recency and frequency use sale orders only; credit-note-only customers have frequency 0 and null recency."
+    columns:
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: frequency
+        tests: [not_null]
+      - name: monetary
+        tests: [not_null]
+
+  - name: int_product_agg
+    description: "Product-level revenue and quantity aggregates."
+    columns:
+      - name: stock_code
+        tests: [not_null, unique]
+
+  - name: int_monthly_country_sales
+    description: "Monthly revenue/orders/customers trends broken down by country."
+    columns:
+      - name: sales_month
+        tests: [not_null]
+      - name: country
+        tests: [not_null]

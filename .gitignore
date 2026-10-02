@@ -1,0 +1,22 @@
+data/raw/*.csv
+data/raw/*.xlsx
+.env
+airflow/logs/
+**/__pycache__/
+**/dbt_packages/
+**/target/
+*.pyc
+outputs/*.png
+
+# Added before publishing (2026-10-02)
+.env
+.env.*
+!.env.example
+dbt/*/logs/
+dbt/*/target/
+dbt/*/dbt_packages/
+airflow/logs/
+logs/
+tableau/~*
+*.bak*
+__pycache__/

@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_retail_transactions
+    description: "Cleaned/standardized retail transaction lines with return/sale flags."
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+          - unique
+      - name: invoice
+        tests:
+          - not_null
+      - name: stock_code
+        tests:
+          - not_null
+      - name: invoice_date
+        tests:
+          - not_null
+      - name: is_return
+        tests:
+          - not_null
+      - name: is_sale
+        tests:
+          - not_null
