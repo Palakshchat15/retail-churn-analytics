@@ -66,12 +66,14 @@ task, so none was added.
 ```
 airflow/                 Dockerfile + DAG definitions (mounted, not baked in)
 dbt/retail_dbt/          dbt project: staging -> intermediate -> marts (warehouse); tests/ = singular data tests
-dbt/profiles.yml         dbt Postgres connection profile (env-var driven)
+dbt/profiles.yml         dbt profile (env-var driven): `dev` = Postgres (Airflow), `bigquery` = BigQuery sandbox (host only)
+dbt/retail_dbt/macros/   generate_schema_name + cross_db.sql (postgres__/bigquery__ versions of the non-portable SQL)
 data/raw/                Real UCI CSV (not committed; see .gitignore)
 data/processed/          CSV exports of the warehouse marts (regenerated each run)
 great_expectations/      Standalone GE validation script (pandas-based, not a full DataContext)
 postgres_init/           SQL run once on first Postgres container init (schemas + raw table DDL)
 src/ingestion/           Chunked CSV -> Postgres loader
+src/bigquery/            BigQuery raw loader + Postgres-vs-BigQuery parity check (host only, requirements-bigquery.txt)
 src/ml_pipeline/         Churn model training (XGBoost + SHAP)
 src/dashboards/          Marts export, Excel dashboard builder, Tableau .twbx builder, shared KPI definitions (kpis.py)
 outputs/                 Model metrics/report/SHAP plot/predictions + the Excel workbook
@@ -423,6 +425,162 @@ builder was rewritten and checked as described above.
 **Known caveat to mention if asked:** the monthly revenue line drops sharply at
 the end because the dataset stops on 2011-12-09, so December 2011 is a partial
 month, not a real sales collapse.
+
+## Cloud warehouse (BigQuery)
+
+The same dbt project also builds on **Google BigQuery**, using the free
+**BigQuery sandbox** (no billing account, no card). This is an addition: the
+Airflow pipeline, the Postgres warehouse and every number above are unchanged.
+BigQuery runs from the host in its own Python environment; nothing is installed
+in the Airflow image.
+
+**Status: run and verified on 2026-10-18** (results at the end of this section).
+
+```
+data/raw/online_retail_ii.csv
+        |
+        v  src/bigquery/load_raw_to_bigquery.py  (one batch load job, WRITE_TRUNCATE)
+BigQuery: retail_raw.retail_transactions
+        |
+        v  dbt run --target bigquery   (same models as Postgres)
+retail_staging -> retail_intermediate -> retail_warehouse  (6 marts)
+        |
+        v  dbt test --target bigquery  (same 58 tests)
+        |
+        v  src/bigquery/verify_bigquery_parity.py
+results/bigquery_parity.csv   (Postgres marts vs BigQuery marts)
+```
+
+**How the models stay portable.** The models keep one SQL source. The few
+PostgreSQL-only constructs go through dbt cross-database macros (`dbt.bool_or`,
+`dbt.hash`, `dbt.concat`) or project macros in
+`dbt/retail_dbt/macros/cross_db.sql` that use `adapter.dispatch` with a
+`postgres__` and a `bigquery__` version:
+
+| PostgreSQL | BigQuery | Macro |
+|---|---|---|
+| `x::int`, `::text`, `::timestamp`, `::numeric(p, s)` | `cast(x as int64 / string / datetime)`; `numeric(p, s)` becomes `cast(round(cast(x as bignumeric), s) as numeric)` (BigQuery rejects parameterized types in CAST) | `retail_cast` |
+| `agg(x) filter (where c)` | `agg(case when c then x end)` | `filtered_agg` |
+| `mode() within group (order by d) filter (...)` | a ranking CTE in `int_product_agg` (`count(*)` per description, `row_number()`), ties broken like the en_US collation; the `max(description)` fallback is ranked the same way | `mode_where` |
+| `date_part('day', a - b)::int` | `div(datetime_diff(a, b, second), 86400)` (elapsed days, not calendar-day boundaries) | `elapsed_days` |
+| `date_trunc('month', ts)::date` | `date_trunc(date(ts), month)` | `month_start` |
+| `like 'GIFT\_%'` | `starts_with(x, 'GIFT_')` | `starts_with_literal` |
+| `bool_or(x)`, `md5(a \|\| '-' \|\| b)` | `logical_or(x)`, `to_hex(md5(concat(...)))` | dbt built-ins |
+
+The `postgres__` versions render exactly the SQL the models had before, so the
+Postgres output is the same. `generate_schema_name` and `sources.yml` also
+switch on the adapter: Postgres keeps `raw` / `staging` / `intermediate` /
+`warehouse`, and BigQuery uses the datasets `retail_raw` / `retail_staging` /
+`retail_intermediate` / `retail_warehouse` (prefix = `BQ_DATASET`, default
+`retail`). The three integer `accepted_values` tests now use `quote: false`
+(BigQuery rejects `INT64 not in ('1', ...)`); the result on Postgres is the same.
+
+**Settings** (environment variables, read by `dbt/profiles.yml` and both scripts):
+
+| Variable | Meaning | Default |
+|---|---|---|
+| `BQ_PROJECT` | Google Cloud project ID | none, required |
+| `BQ_KEYFILE` | optional: path to a service-account JSON key. If unset, your own Google sign-in is used (`gcloud auth application-default login`) | none |
+| `BQ_DATASET` | dataset prefix | `retail` |
+| `BQ_LOCATION` | dataset and job location | `US` |
+
+If you use a key file, treat it as a password. Keep it outside the project (e.g.
+`C:/Users/<you>/.gcp/retail-dbt.json`) or in `./secrets/`, which is
+gitignored, as are `*service-account*.json` and `gcp-key*.json`. Never commit
+it or paste it anywhere.
+
+**Sandbox limits and how the code respects them**
+- Tables expire **60 days** after they are created. After that, re-run steps 3
+  to 5 below; nothing else changes.
+- No streaming inserts and no DML. The raw table is written by **one batch load
+  job** from a local gzip CSV (load jobs are free) with `WRITE_TRUNCATE`. dbt
+  builds tables with `CREATE OR REPLACE TABLE ... AS SELECT` and views with
+  `CREATE OR REPLACE VIEW`; there are no incremental models, snapshots or seeds.
+- 10 GB of storage and 1 TB of queries per month are free. The raw table is
+  about 0.1 GB, and the profile caps any single query at 5 GB
+  (`maximum_bytes_billed`).
+
+### Owner's one-time setup
+
+1. **Create a project in sandbox mode.** Open
+   https://console.cloud.google.com/bigquery and sign in with a personal Google
+   account. Accept the terms and create a project (e.g. `retail-analytics-bq`).
+   Do **not** add a billing account: the console then shows a "Sandbox" banner.
+   Note the **project ID** (it can differ from the project name).
+2. **Enable the BigQuery API**: APIs & Services → Library → "BigQuery API" →
+   Enable (new projects usually have it on already).
+3. **Sign in** (no key file needed). Install the Google Cloud CLI, then run
+   `gcloud auth application-default login` and
+   `gcloud auth application-default set-quota-project <your-project-id>`.
+   dbt (method `oauth`) and both scripts use this sign-in. Many Google accounts
+   block service-account key creation by policy
+   (`iam.disableServiceAccountKeyCreation`); where it is allowed, a key file
+   set in `BQ_KEYFILE` works too.
+4. **Python 3.11** must be installed (`py -0` lists the installed versions).
+   dbt-core 1.7 supports Python 3.8-3.11.
+
+### How to run (in this order)
+
+PowerShell, from this folder (`retail_analytics_project`):
+
+```powershell
+# 1. Host environment for BigQuery (once)
+py -3.11 -m venv .venv-bq
+.venv-bq\Scripts\python -m pip install -r requirements-bigquery.txt
+
+# 2. Settings for this shell (your project ID; set BQ_KEYFILE only if you use a key)
+$env:BQ_PROJECT  = "<your-project-id>"
+$env:BQ_LOCATION = "US"
+$env:DBT_PROFILES_DIR = "$PWD\dbt"
+
+# 3. Load the raw CSV into retail_raw.retail_transactions
+.venv-bq\Scripts\python src\bigquery\load_raw_to_bigquery.py
+
+# 4. Build and test the models on BigQuery. --target-path keeps BigQuery's
+#    compiled files apart from the Postgres pipeline's dbt/retail_dbt/target.
+cd dbt\retail_dbt
+..\..\.venv-bq\Scripts\dbt debug --target bigquery
+..\..\.venv-bq\Scripts\dbt run   --target bigquery --target-path target_bq
+..\..\.venv-bq\Scripts\dbt test  --target bigquery --target-path target_bq
+cd ..\..
+
+# 5. Parity check against Postgres. Needs a finished DAG run and the Postgres
+#    container up (docker compose up -d postgres).
+.venv-bq\Scripts\python src\bigquery\verify_bigquery_parity.py
+```
+
+### Results (run 2026-10-18, BigQuery sandbox, location US)
+
+| Item | Value |
+|---|---|
+| Postgres pipeline after the macro changes | DAG success, `dbt test` 58 of 58, `outputs/` byte-identical to before |
+| `retail_raw.retail_transactions` rows loaded | 1,067,371 (same as Postgres) |
+| Load time (prepare + load job) | 49 s (19.6 MB gzip CSV, one load job) |
+| `dbt run --target bigquery` | 11 of 11 models |
+| `dbt test --target bigquery` | 58 of 58 passed |
+| Parity checks matching (`results/bigquery_parity.csv`) | **46 of 46** |
+| Mart row counts equal to Postgres | all 8 tables (e.g. 44,870 orders, 5,878 RFM customers, 4,705 products) |
+| Revenue KPI (`fact_orders.sum_net_amount`), PG / BQ | 16,343,669.038 / 16,343,669.038 |
+| Churn-rate inputs (scored / churned customers), PG / BQ | 2,648 / 784 on both (churn rate 0.2961) |
+| Rows differing in `mart_customer_rfm`, `dim_customer`, `dim_product`, `mart_product_performance` | 0 in each |
+
+Fixes made during the run: BigQuery rejects `cast(x as numeric(12, 4))` and an
+aggregate inside `unnest(...)`, so `retail_cast` rounds instead and the
+description mode became a ranking CTE. The first parity run then showed one
+product (20852, no sale lines) where the `max(description)` fallback picked
+`given away` on BigQuery and `Given away` on Postgres (byte order vs en_US);
+the BigQuery fallback now sorts like en_US.
+
+Note for the Postgres pipeline: after macros change, dbt's cache
+`dbt/retail_dbt/target/partial_parse.msgpack` can keep stale dependencies
+("dbt was unable to infer all dependencies"). Delete that file (dbt rebuilds
+it) and re-run.
+
+**Possible difference to look for.** Products with equal `net_revenue` have no
+tie-breaker in `mart_product_performance` (`row_number()`), so `revenue_rank`,
+`cumulative_revenue_pct` and the ABC class of boundary products can differ
+between engines (and in principle between Postgres runs). Every other check is
+expected to match exactly.
 
 ## Audit fixes: what was wrong and before → after
 

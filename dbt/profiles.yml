@@ -10,3 +10,33 @@ retail_dbt:
       dbname: "{{ env_var('POSTGRES_DB', 'retail_analytics') }}"
       schema: staging
       threads: 4
+
+    # Google BigQuery (free sandbox, no billing account). Host only: the Airflow
+    # image does not install dbt-bigquery; use requirements-bigquery.txt.
+    # Run with:  dbt run --target bigquery --target-path target_bq
+    # dbt only renders the selected target, so the defaults below never matter
+    # for the Postgres pipeline; they just make a missing variable obvious.
+    #   BQ_PROJECT   Google Cloud project ID (not the display name)
+    #   BQ_KEYFILE   absolute path to the service-account JSON key. Keep the key
+    #                outside the repo (e.g. C:/Users/<you>/.gcp/retail-dbt.json)
+    #                or in ./secrets/ (gitignored). Never commit it.
+    #   BQ_DATASET   dataset prefix, default "retail". Datasets used:
+    #                retail_raw (loaded by src/bigquery/load_raw_to_bigquery.py),
+    #                retail_staging, retail_intermediate, retail_warehouse (dbt).
+    #   BQ_LOCATION  dataset/job location, default "US" (must match the datasets).
+    bigquery:
+      type: bigquery
+      # oauth = your own Google sign-in (gcloud auth application-default login), used when BQ_KEYFILE is unset;
+      # service-account only if you set BQ_KEYFILE (many accounts block key creation by policy).
+      method: "{{ 'service-account' if env_var('BQ_KEYFILE', '') else 'oauth' }}"
+      keyfile: "{{ env_var('BQ_KEYFILE', '') }}"
+      project: "{{ env_var('BQ_PROJECT', 'BQ_PROJECT-not-set') }}"
+      dataset: "{{ env_var('BQ_DATASET', 'retail') }}"
+      location: "{{ env_var('BQ_LOCATION', 'US') }}"
+      threads: 4
+      priority: interactive
+      job_execution_timeout_seconds: 600
+      job_retries: 1
+      # Guard: no single query may scan more than 5 GB (the whole raw table is
+      # about 0.1 GB; the sandbox allows 1 TB of queries per month).
+      maximum_bytes_billed: 5000000000

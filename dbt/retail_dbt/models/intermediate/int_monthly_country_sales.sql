@@ -7,13 +7,13 @@ with txn as (
 )
 
 select
-    date_trunc('month', invoice_date)::date              as sales_month,
+    {{ month_start('invoice_date') }}                    as sales_month,
     country,
     sum(case when is_sale then line_amount else 0 end)   as gross_revenue,
     sum(case when is_return then abs(line_amount) else 0 end) as returned_revenue,
     sum(case when is_sale then line_amount else -abs(line_amount) end) as net_revenue,
-    count(distinct invoice) filter (where is_sale)       as num_orders,
-    count(distinct customer_id) filter (where is_sale)   as num_customers,
+    {{ filtered_agg('count', 'invoice', 'is_sale', distinct=true) }} as num_orders,
+    {{ filtered_agg('count', 'customer_id', 'is_sale', distinct=true) }} as num_customers,
     sum(case when is_sale then quantity else 0 end)      as items_sold
 from txn
 group by 1, 2

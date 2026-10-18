@@ -51,16 +51,19 @@ models:
           - not_null
           - accepted_values:
               values: [1, 2, 3, 4, 5]
+              quote: false   # integer column: BigQuery rejects INT64 NOT IN ('1', ...); same result on Postgres
       - name: f_score
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3, 4, 5]
+              quote: false   # integer column: BigQuery rejects INT64 NOT IN ('1', ...); same result on Postgres
       - name: m_score
         tests:
           - not_null
           - accepted_values:
               values: [1, 2, 3, 4, 5]
+              quote: false   # integer column: BigQuery rejects INT64 NOT IN ('1', ...); same result on Postgres
       - name: customer_segment
         tests:
           - not_null

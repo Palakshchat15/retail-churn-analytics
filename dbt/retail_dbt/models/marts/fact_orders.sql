@@ -3,7 +3,7 @@
 -- Count orders with `where order_type = 'sale'`; sum net_amount over all rows
 -- for net revenue (credit notes carry the negative side).
 select
-    md5(customer_id || '-' || invoice) as order_key,
+    {{ dbt.hash(dbt.concat(['customer_id', "'-'", 'invoice'])) }} as order_key,
     customer_id,
     invoice,
     order_type,

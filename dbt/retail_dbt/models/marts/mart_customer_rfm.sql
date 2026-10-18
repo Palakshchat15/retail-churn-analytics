@@ -39,9 +39,9 @@ ranked as (
 scored as (
     select
         *,
-        least(5, 1 + floor(5 * r_pct))::int as r_score,
-        least(5, 1 + floor(5 * f_pct))::int as f_score,
-        least(5, 1 + floor(5 * m_pct))::int as m_score
+        {{ retail_cast('least(5, 1 + floor(5 * r_pct))', 'int') }} as r_score,
+        {{ retail_cast('least(5, 1 + floor(5 * f_pct))', 'int') }} as f_score,
+        {{ retail_cast('least(5, 1 + floor(5 * m_pct))', 'int') }} as m_score
     from ranked
 ),
 

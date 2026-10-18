@@ -20,3 +20,13 @@ logs/
 tableau/~*
 *.bak*
 __pycache__/
+
+# BigQuery target (host only, 2026-10-17)
+# Service-account keys must never be committed. Keep the key outside the repo,
+# or in ./secrets/ which is ignored.
+secrets/
+*service-account*.json
+*-sa-key*.json
+gcp-key*.json
+.venv*/
+dbt/*/target_bq/

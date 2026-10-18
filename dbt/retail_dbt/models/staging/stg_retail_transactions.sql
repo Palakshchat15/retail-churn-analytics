@@ -49,9 +49,9 @@ cleaned as (
         upper(trim(invoice))                            as invoice,
         upper(trim(stock_code))                         as stock_code,
         trim(description)                               as description,
-        quantity::int                                   as quantity,
-        invoice_date::timestamp                         as invoice_date,
-        price::numeric(12, 4)                           as unit_price,
+        {{ retail_cast('quantity', 'int') }}               as quantity,
+        {{ retail_cast('invoice_date', 'timestamp') }}     as invoice_date,
+        {{ retail_cast('price', 'numeric(12, 4)') }}       as unit_price,
         nullif(trim(customer_id), '')                   as customer_id,
         trim(country)                                   as country,
         source_sheet,
@@ -64,8 +64,8 @@ cleaned as (
         (upper(trim(stock_code)) in (
             'M', 'DOT', 'POST', 'AMAZONFEE', 'C2', 'C3', 'B', 'D', 'S', 'CRUK', 'PADS',
             'ADJUST', 'ADJUST2', 'BANK CHARGES', 'TEST001', 'TEST002'
-        ) or upper(trim(stock_code)) like 'GIFT\_%')     as is_non_merchandise,
-        (quantity * price)::numeric(14, 4)              as line_amount
+        ) or {{ starts_with_literal('upper(trim(stock_code))', 'GIFT_') }}) as is_non_merchandise,
+        {{ retail_cast('(quantity * price)', 'numeric(14, 4)') }} as line_amount
     from deduped
     where invoice is not null
       and stock_code is not null

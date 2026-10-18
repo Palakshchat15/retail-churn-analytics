@@ -1,0 +1,24 @@
+# Host-only requirements for the BigQuery target (NOT installed in the Airflow
+# image; requirements-airflow.txt and the Docker stack are unchanged).
+#
+# Use a separate Python 3.11 virtual environment (dbt-core 1.7 supports
+# Python 3.8-3.11; pyarrow 15 has no wheels for 3.13+):
+#   py -3.11 -m venv .venv-bq
+#   .venv-bq\Scripts\python -m pip install -r requirements-bigquery.txt
+
+# dbt: same core version as the Airflow image, BigQuery adapter from the 1.7 line
+dbt-core==1.7.13
+dbt-bigquery==1.7.9
+
+# BigQuery client (load job + parity queries). dbt-bigquery 1.7.9 needs
+# google-cloud-bigquery[pandas]>=3.0,<4.0.
+google-cloud-bigquery==3.25.0
+db-dtypes==1.2.0
+pyarrow==15.0.2
+
+# Same data stack as the Airflow image, so CSV parsing matches the Postgres loader
+numpy==1.26.4
+pandas==2.1.4
+
+# Parity script reads the Postgres warehouse on localhost:5434
+psycopg2-binary==2.9.9

@@ -24,15 +24,15 @@ orders as (
 customer_agg as (
     select
         o.customer_id,
-        max(o.order_date) filter (where o.is_sale_order)    as last_order_date,
-        min(o.order_date) filter (where o.is_sale_order)    as first_order_date,
-        count(distinct o.invoice) filter (where o.is_sale_order) as frequency,
-        count(distinct o.invoice) filter (where not o.is_sale_order) as num_credit_notes,
+        {{ filtered_agg('max', 'o.order_date', 'o.is_sale_order') }}    as last_order_date,
+        {{ filtered_agg('min', 'o.order_date', 'o.is_sale_order') }}    as first_order_date,
+        {{ filtered_agg('count', 'o.invoice', 'o.is_sale_order', distinct=true) }} as frequency,
+        {{ filtered_agg('count', 'o.invoice', 'not o.is_sale_order', distinct=true) }} as num_credit_notes,
         sum(o.net_amount)                                   as monetary,
         sum(o.gross_sale_amount)                            as gross_sales,
         sum(o.items_purchased)                              as total_items_purchased,
         sum(o.items_returned)                               as total_items_returned,
-        avg(o.distinct_products) filter (where o.is_sale_order) as avg_distinct_products_per_order,
+        {{ filtered_agg('avg', 'o.distinct_products', 'o.is_sale_order') }} as avg_distinct_products_per_order,
         max(o.country)                                      as country
     from orders o
     group by o.customer_id
@@ -44,7 +44,7 @@ select
     c.first_order_date,
     c.last_order_date,
     (select max_date from dataset_bounds) as dataset_max_date,
-    date_part('day', (select max_date from dataset_bounds) - c.last_order_date)::int as recency_days,
+    {{ elapsed_days('(select max_date from dataset_bounds)', 'c.last_order_date') }} as recency_days,
     c.frequency,
     c.num_credit_notes,
     c.monetary,
@@ -52,8 +52,8 @@ select
     c.total_items_purchased,
     c.total_items_returned,
     case when c.total_items_purchased > 0
-         then round(c.total_items_returned::numeric / c.total_items_purchased, 4)
+         then round({{ retail_cast('c.total_items_returned', 'numeric') }} / c.total_items_purchased, 4)
          else 0 end as return_rate,
     c.avg_distinct_products_per_order,
-    date_part('day', c.last_order_date - c.first_order_date)::int as customer_tenure_days
+    {{ elapsed_days('c.last_order_date', 'c.first_order_date') }} as customer_tenure_days
 from customer_agg c

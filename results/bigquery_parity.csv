@@ -1,0 +1,47 @@
+check,postgres,bigquery,abs_diff,match
+rows.raw.retail_transactions,1067371,1067371,0,True
+rows.staging.stg_retail_transactions,1042211,1042211,0,True
+rows.warehouse.dim_customer,5939,5939,0,True
+rows.warehouse.dim_product,5049,5049,0,True
+rows.warehouse.fact_orders,44870,44870,0,True
+rows.warehouse.mart_customer_rfm,5878,5878,0,True
+rows.warehouse.mart_product_performance,4705,4705,0,True
+rows.warehouse.mart_monthly_sales_country,594,594,0,True
+staging.return_lines,22558,22558,0,True
+staging.sum_line_amount,19057376.1980,19057376.198,0.0000,True
+fact_orders.sale_orders,36969,36969,0,True
+fact_orders.credit_notes,7901,7901,0,True
+fact_orders.sum_net_amount (revenue KPI),16343669.0380,16343669.038,0.0000,True
+fact_orders.sum_gross_sale_amount,17431551.1780,17431551.178,0.0000,True
+fact_orders.distinct_order_keys,44870,44870,0,True
+monthly.sum_net_revenue (all sales),19056629.0580,19056629.058,0.0000,True
+monthly.sum_gross_revenue,20522679.8580,20522679.858,0.0000,True
+monthly.sum_num_orders,40076,40076,0,True
+rfm.customers,5878,5878,0,True
+rfm.sum_recency_days,1177551,1177551,0,True
+rfm.sum_frequency,36969,36969,0,True
+rfm.sum_monetary,16404718.7080,16404718.708,0.0000,True
+rfm.sum_return_rate,143.0120,143.012,0.0000,True
+rfm.sum_r_score,17558,17558,0,True
+rfm.sum_f_score,16732,16732,0,True
+rfm.sum_m_score,17634,17634,0,True
+dim_customer.sum_tenure_days,1604826,1604826,0,True
+product.sum_net_revenue,18981817.9800,18981817.98,0.0000,True
+product.sum_quantity_sold,11140297,11140297,0,True
+product.sum_return_rate_revenue,118.6538,118.6538,0.0000,True
+rfm.segment.Champions,1260,1260,0,True
+rfm.segment.Loyal,799,799,0,True
+rfm.segment.Potential Loyalist,706,706,0,True
+rfm.segment.At Risk,786,786,0,True
+rfm.segment.Lost,1364,1364,0,True
+rfm.segment.Others,963,963,0,True
+product.abc.A,1038,1038,0,True
+product.abc.B,1257,1257,0,True
+product.abc.C,2410,2410,0,True
+churn_inputs.scored_customers,2648,2648,0,True
+churn_inputs.churned_customers,784,784,0,True
+churn_inputs.churn_rate,0.2961,0.2961,0.0000,True
+rows_differing.mart_customer_rfm (scores + segment),0,0,0,True
+"rows_differing.dim_customer (country, dates)",0,0,0,True
+rows_differing.dim_product (description),0,0,0,True
+rows_differing.mart_product_performance (abc_class),0,0,0,True
